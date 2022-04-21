@@ -1,5 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import sanityClient from "../client.js";
 
 export default function Project() {
-  return <h1>Project</h1>;
+  const [projectData, setProject] = useState(null);
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "project"]{
+              title,
+              description,
+              Language_Frameworks,
+              date,
+              projectType,
+              link,
+              tags       
+          }`
+      )
+      .then((data) => setProject(data))
+      .catch(console.error);
+  }, []);
+
+  return;
 }
