@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../wallpaperflare.com_wallpaper.jpg";
+import image from "../bg-portfolio.jpg";
 
 export default function Home() {
   return (
