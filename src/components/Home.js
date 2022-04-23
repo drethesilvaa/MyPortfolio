@@ -1,5 +1,6 @@
 import React from "react";
 import image from "../bg-portfolio.jpg";
+import About from "./About";
 
 export default function Home() {
   return (
@@ -13,6 +14,9 @@ export default function Home() {
         <h1 className="text-6xl text-green-100 font-bold cursive leading-none lg:leading-snug home-name">
           Hello. Andre here
         </h1>
+      </section>
+      <section>
+        <About></About>
       </section>
     </main>
   );

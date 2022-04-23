@@ -1,6 +1,7 @@
 @import url("https://play.tailwindcss.com/plugins/5/v3/@tailwindcss/typography@0.5.1.js");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Playfair+Display&family=Square+Peg&display=swap');
+
 
 body{
   font-family: 'Montserrat', sans-serif;
@@ -9,7 +10,7 @@ body{
 
 .cursive{
   font-weight: 700;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Square Peg', cursive;
 }
 
 .prose img{
