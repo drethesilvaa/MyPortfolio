@@ -12,6 +12,57 @@ function urlFor(source) {
 export default function About() {
   const [author, setAuthor] = useState(null);
 
+  const serializers = {
+    types: {
+      block: (props) => {
+        const style = props.node.style || "normal";
+
+        if (/^h\d/.test(style)) {
+          const level = style.replace(/[^\d]/g, "");
+          return React.createElement(
+            `h${level}`,
+            { className: "text-lg" },
+            props.children
+          );
+        }
+
+        return style === "blockquote" ? (
+          <blockquote>– {props.children}</blockquote>
+        ) : (
+          <p>{props.children}</p>
+        );
+      },
+      code: (props) =>
+        console.log("code block", props) || (
+          <pre data-language={props.node.language}>
+            <code>{props.node.code}</code>
+          </pre>
+        ),
+      youtube: (props) => <pre>{JSON.stringify(props, null, 2)}</pre>,
+    },
+    list: (props) =>
+      console.log("list", props) ||
+      (props.type === "bullet" ? (
+        <ul className="list-disc list-outside">{props.children}</ul>
+      ) : (
+        <ol className="list-decimal list-outside">{props.children}</ol>
+      )),
+    listItem: (props) =>
+      console.log("list", props) ||
+      (props.type === "bullet" ? (
+        <li>{props.children}</li>
+      ) : (
+        <li>{props.children}</li>
+      )),
+    marks: {
+      strong: (props) =>
+        console.log("strong", props) || <strong>{props.children}</strong>,
+      em: (props) => console.log("em", props) || <em>{props.children}</em>,
+      code: (props) =>
+        console.log("code", props) || <code>{props.children}</code>,
+    },
+  };
+
   const styleBioTitle = {
     position: "absolute",
     opacity: "0.5",
@@ -61,6 +112,7 @@ export default function About() {
                     blocks={author.bio}
                     projectId={sanityClient.projectId}
                     dataset={sanityClient.dataset}
+                    serializers={serializers}
                   ></SanityBlockContent>
                 }
               </div>
