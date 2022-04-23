@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
-import imageUrlBuilder from "@sanity/image-url";
 import SanityBlockContent from "@sanity/block-content-to-react";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
-
-const builder = imageUrlBuilder(sanityClient);
-function urlFor(source) {
-  return builder.image(source);
-}
 
 export default function About() {
   const [author, setAuthor] = useState(null);
