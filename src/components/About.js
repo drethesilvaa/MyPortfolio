@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
 import SanityBlockContent from "@sanity/block-content-to-react";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
+import { Col, Row } from "react-bootstrap";
 
 export default function About() {
   const [author, setAuthor] = useState(null);
@@ -58,10 +59,7 @@ export default function About() {
   };
 
   const styleBioTitle = {
-    position: "absolute",
-    opacity: "0.5",
-    top: "50%",
-    transform: "translateY(-50%)",
+    position: "relative",
   };
   useEffect(() => {
     sanityClient
@@ -80,40 +78,46 @@ export default function About() {
 
   return (
     <main className="relative">
-      <div className="rounded-lg shadow-2xl lg:flex p-20">
-        <AnimatedOnScroll animationIn="fadeInUp">
-          <h1
-            class="cursive text-8xl text-green-300 mb-4 "
-            style={styleBioTitle}
-          >
-            BIO
-          </h1>
-          <section className="rounded-lg shadow-2xl lg:flex pl-40">
-            {/* <img
+      <Row>
+        <Col xs={12} lg={4}>
+          <AnimatedOnScroll animationIn="fadeInLeft">
+            <h1
+              class="cursive text-8xl text-green-100 mb-4 "
+              style={styleBioTitle}
+            >
+              About Me
+            </h1>
+          </AnimatedOnScroll>
+        </Col>
+        <Col xs={12} lg={8}>
+          <AnimatedOnScroll animationIn="fadeInLeft">
+            <section className="rounded-lg shadow-2xl lg:flex">
+              {/* <img
             src={urlFor(author.authorImage).url()}
             className="rounded w-32 h-32 lg:w-64 lg:h-64 mr-8"
             alt={author.name}
           ></img> */}
 
-            <div className="text-lg flex flex-col justify-center">
-              {/* <h1 className="cursive text-8xl text-green-300 mb-4 ">
+              <div className="text-lg flex flex-col justify-center">
+                {/* <h1 className="cursive text-8xl text-green-300 mb-4 ">
                 Hey there. I'm{" "}
                 <span className="text-green-100">{author.name}</span>
               </h1> */}
-              <div className="prose lg:prose-xl text-white ">
-                {
-                  <SanityBlockContent
-                    blocks={author.bio}
-                    projectId={sanityClient.projectId}
-                    dataset={sanityClient.dataset}
-                    serializers={serializers}
-                  ></SanityBlockContent>
-                }
+                <div className="prose lg:prose-xl text-white ">
+                  {
+                    <SanityBlockContent
+                      blocks={author.bio}
+                      projectId={sanityClient.projectId}
+                      dataset={sanityClient.dataset}
+                      serializers={serializers}
+                    ></SanityBlockContent>
+                  }
+                </div>
               </div>
-            </div>
-          </section>
-        </AnimatedOnScroll>
-      </div>
+            </section>
+          </AnimatedOnScroll>
+        </Col>
+      </Row>
       <span id="aboutme"></span>
     </main>
   );
