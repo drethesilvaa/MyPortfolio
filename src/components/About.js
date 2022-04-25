@@ -77,12 +77,12 @@ export default function About() {
   if (!author) return <div>Loading...</div>;
 
   return (
-    <main className="relative">
+    <main className="relative mt-4">
       <Row>
         <Col xs={12} lg={4}>
           <AnimatedOnScroll animationIn="fadeInLeft">
             <h1
-              class="cursive text-8xl text-green-100 mb-4 "
+              class="cursive text-8xl text-left lg:text-right text-green-100 mb-4 "
               style={styleBioTitle}
             >
               About Me
