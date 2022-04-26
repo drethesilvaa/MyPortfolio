@@ -2,6 +2,7 @@ import React from "react";
 import image from "../images/bg-portfolio.jpg";
 import background from "../images/bg2.jpg";
 import About from "./About";
+import Projects from "./Project";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { Container } from "react-bootstrap";
 
@@ -31,13 +32,16 @@ export default function Home() {
             style={{ top: "20%", position: "absolute" }}
           >
             <h1 className="text-6xl text-green-100 font-bold cursive leading-none home-name">
-              Hello. <br></br> I'm Andre, <br></br> Full Stack Developer
+              Hi, <br></br> I'm Andre, <br></br> Full Stack Developer
             </h1>
           </AnimatedOnScroll>
         </section>
       </Container>
       <Container>
         <About></About>
+      </Container>
+      <Container>
+        <Projects></Projects>
       </Container>
     </main>
   );
