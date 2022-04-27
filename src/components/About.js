@@ -78,7 +78,7 @@ export default function About() {
   if (!author) return <div>Loading...</div>;
 
   return (
-    <main className="relative mt-4">
+    <main className="relative">
       <Row>
         <Col xs={12} lg={6}>
           <h1
@@ -114,7 +114,10 @@ export default function About() {
           </section>
         </Col>
         <Col xs={12} lg={6}>
-          <AnimatedOnScroll animationIn="fadeInLeft">
+          <AnimatedOnScroll
+            animationIn="fadeInLeft"
+            className="relative lg:top-1/4"
+          >
             <Wordcloud></Wordcloud>
           </AnimatedOnScroll>
         </Col>

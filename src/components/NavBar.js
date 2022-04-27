@@ -37,9 +37,9 @@ export default function NavBar() {
                 </NavLink>
               </Nav.Link>
               <Nav.Link>
-                <NavLink to="/project" className={stylenav}>
+                <Link to="/#myprojects" smooth className={stylenav}>
                   Projects
-                </NavLink>
+                </Link>
               </Nav.Link>
               <Nav.Link>
                 <Link to="/#aboutme" smooth className={stylenav}>
