@@ -1,19 +1,19 @@
 import React from "react";
-import image from "../images/bg-portfolio.jpg";
-import background from "../images/bg2.jpg";
+// import image from "../images/bg-portfolio.jpg";
+// import background from "../images/bg2.jpg";
 import About from "./About";
 import Projects from "./Project";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { Container } from "react-bootstrap";
 
 export default function Home() {
-  const homestyle = {
-    background: `url(${background})`,
-    height: "100%",
-    "background-position": "center",
-    "background-repeat": "no-repeat",
-    "background-size": "cover",
-  };
+  // const homestyle = {
+  //   background: `url(${background})`,
+  //   height: "100%",
+  //   "background-position": "center",
+  //   "background-repeat": "no-repeat",
+  //   "background-size": "cover",
+  // };
 
   return (
     <main>
