@@ -30,12 +30,12 @@ export default function NavBar() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link>
+              {/* <Nav.Link>
                 {" "}
                 <NavLink to="/post" className={stylenav}>
                   Blog Posts
-                </NavLink>
-              </Nav.Link>
+                </NavLink> 
+              </Nav.Link>*/}
               <Nav.Link>
                 <Link to="/#myprojects" smooth className={stylenav}>
                   Projects
