@@ -1,7 +1,8 @@
 @import url("https://play.tailwindcss.com/plugins/5/v3/@tailwindcss/typography@0.5.1.js");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Playfair+Display&family=Square+Peg&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"); 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;800&family=Playfair+Display&family=Square+Peg&display=swap');
 @import  'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 header{
   font-family: 'Square Peg', cursive;
@@ -10,7 +11,8 @@ header{
 
 body{
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
+  background: #1d1d1d;
 }
 
 .cursive{
@@ -24,6 +26,25 @@ body{
   border-radius: 5px;
 }
 
-.home-name{
-  font-size: 150px;
+a{
+  text-decoration: none;
 }
+
+.home-name{
+  font-size: 5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+
+}
+
+@media screen and (max-width: 991px) {
+  .home-name{
+    font-size: 3rem;
+  }
+  
+}
+
+.bg-dark{
+  background-color: black !important;
+}
+

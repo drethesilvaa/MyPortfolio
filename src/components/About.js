@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
 import SanityBlockContent from "@sanity/block-content-to-react";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
+import { Col, Row } from "react-bootstrap";
+import Wordcloud from "./wordcloud.js";
 
 export default function About() {
   const [author, setAuthor] = useState(null);
@@ -58,10 +60,7 @@ export default function About() {
   };
 
   const styleBioTitle = {
-    position: "absolute",
-    opacity: "0.5",
-    top: "50%",
-    transform: "translateY(-50%)",
+    position: "relative",
   };
   useEffect(() => {
     sanityClient
@@ -80,15 +79,15 @@ export default function About() {
 
   return (
     <main className="relative">
-      <div className="rounded-lg shadow-2xl lg:flex p-20">
-        <AnimatedOnScroll animationIn="fadeInUp">
+      <Row>
+        <Col xs={12} lg={6}>
           <h1
-            class="cursive text-8xl text-green-300 mb-4 "
+            className="cursive text-8xl text-left text-green-100 mb-4 "
             style={styleBioTitle}
           >
-            BIO
+            About Me
           </h1>
-          <section className="rounded-lg shadow-2xl lg:flex pl-40">
+          <section className="rounded-lg lg:flex">
             {/* <img
             src={urlFor(author.authorImage).url()}
             className="rounded w-32 h-32 lg:w-64 lg:h-64 mr-8"
@@ -111,9 +110,18 @@ export default function About() {
                 }
               </div>
             </div>
+            <div></div>
           </section>
-        </AnimatedOnScroll>
-      </div>
+        </Col>
+        <Col xs={12} lg={6}>
+          <AnimatedOnScroll
+            animationIn="fadeInLeft"
+            className="relative lg:top-1/4"
+          >
+            <Wordcloud></Wordcloud>
+          </AnimatedOnScroll>
+        </Col>
+      </Row>
       <span id="aboutme"></span>
     </main>
   );

@@ -2,12 +2,13 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 import { HashLink as Link } from "react-router-hash-link";
+import { Navbar, Nav, Container } from "react-bootstrap";
 
 require("bootstrap");
 
 export default function NavBar() {
   const stylenav =
-    "inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-white tracking-wide text-2xl";
+    "inline-flex items-center py-3 px-3 my-6 rounded text-green-100 hover:text-white tracking-wide text-2xl";
 
   // const activeStyleNav = "text-red-1999 bg-red-700";
 
@@ -15,42 +16,56 @@ export default function NavBar() {
 
   return (
     <header className="">
-      <div className="container mx-auto flex justify-between">
-        <Link
-          to="/"
-          exact
-          className="inline-flex items-center py-6 px-3 mr-4 text-red-100 hover:text-white text-4xl font-bold cursive tracking-widest"
-        >
-          Andre Silva
-        </Link>
-        <nav className="flex ml-auto">
-          <NavLink to="/post" className={stylenav}>
-            Blog Posts
-          </NavLink>
-          <NavLink to="/project" className={stylenav}>
-            Projects
-          </NavLink>
-          <Link to="/#aboutme" smooth className={stylenav}>
-            About Me
-          </Link>
-        </nav>
-        <div className="inline-flex py-3 px-3 my-6">
-          <SocialIcon
-            url="https://github.com/drethesilvaa"
-            className="mr-4"
-            target={"_blank"}
-            fgColor="#fff"
-            style={socialIconsStyle}
-          ></SocialIcon>
-          <SocialIcon
-            url="https://www.linkedin.com/in/andréssilva/"
-            className="mr-4"
-            target={"_blank"}
-            fgColor="#fff"
-            style={socialIconsStyle}
-          ></SocialIcon>
-        </div>
-      </div>
+      <Navbar bg="transparent" variant="dark" expand="lg">
+        <Container>
+          <Navbar.Brand href="#home">
+            <Link
+              to="/"
+              exact
+              className="inline-flex items-center py-6 px-3 mr-4 text-green-100 hover:text-white text-4xl font-bold cursive tracking-widest"
+            >
+              Andre Silva
+            </Link>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              {/* <Nav.Link>
+                {" "}
+                <NavLink to="/post" className={stylenav}>
+                  Blog Posts
+                </NavLink> 
+              </Nav.Link>*/}
+              <Nav.Link>
+                <Link to="/#myprojects" smooth className={stylenav}>
+                  Projects
+                </Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link to="/#aboutme" smooth className={stylenav}>
+                  About Me
+                </Link>
+              </Nav.Link>
+              <div className="inline-flex py-3 px-3 my-6">
+                <SocialIcon
+                  url="https://github.com/drethesilvaa"
+                  className="mr-4"
+                  target={"_blank"}
+                  fgColor="#fff"
+                  style={socialIconsStyle}
+                ></SocialIcon>
+                <SocialIcon
+                  url="https://www.linkedin.com/in/andréssilva/"
+                  className="mr-4"
+                  target={"_blank"}
+                  fgColor="#fff"
+                  style={socialIconsStyle}
+                ></SocialIcon>
+              </div>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </header>
   );
 }
