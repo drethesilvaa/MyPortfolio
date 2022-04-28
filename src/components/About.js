@@ -79,6 +79,7 @@ export default function About() {
 
   return (
     <main className="relative">
+      <span id="aboutme"></span>
       <Row>
         <Col xs={12} lg={6}>
           <h1
@@ -86,7 +87,7 @@ export default function About() {
             style={styleBioTitle}
           >
             About Me
-          </h1>
+          </h1>{" "}
           <section className="rounded-lg lg:flex">
             {/* <img
             src={urlFor(author.authorImage).url()}
@@ -122,7 +123,6 @@ export default function About() {
           </AnimatedOnScroll>
         </Col>
       </Row>
-      <span id="aboutme"></span>
     </main>
   );
 }
