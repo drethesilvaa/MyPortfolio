@@ -8,7 +8,7 @@ require("bootstrap");
 
 export default function NavBar() {
   const stylenav =
-    "inline-flex items-center py-3 px-3 my-6 rounded text-green-100 hover:text-white tracking-wide text-2xl";
+    "inline-flex items-center lg:py-3 px-3 lg:my-6 rounded text-green-100 hover:text-white tracking-wide text-2xl";
 
   // const activeStyleNav = "text-red-1999 bg-red-700";
 
@@ -46,7 +46,7 @@ export default function NavBar() {
                   About Me
                 </Link>
               </Nav.Link>
-              <div className="inline-flex py-3 px-3 my-6">
+              <div className="inline-flex lg:py-3 px-3 lg:my-6">
                 <SocialIcon
                   url="https://github.com/drethesilvaa"
                   className="mr-4"
