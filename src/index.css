@@ -47,4 +47,32 @@ a{
 .bg-dark{
   background-color: black !important;
 }
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
+.row .project {
+  text-align: right;
+}
+.row .project:nth-child(even) {
+  text-align: left;
+  margin-top: 40px;
+}
+
+.project-tech-list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+.project-description{
+  position: relative;
+    padding: 25px;
+    background-color: #4d4d83;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: 20px 0;
+    display: inline-block;
+}

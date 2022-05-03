@@ -3,6 +3,7 @@ import React from "react";
 // import background from "../images/bg2.jpg";
 import About from "./About";
 import Projects from "./Project";
+import Footer from "./Footer";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { Container } from "react-bootstrap";
 
@@ -42,6 +43,9 @@ export default function Home() {
       </Container>
       <Container>
         <Projects></Projects>
+      </Container>
+      <Container>
+        <Footer></Footer>
       </Container>
     </main>
   );

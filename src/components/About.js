@@ -83,7 +83,7 @@ export default function About() {
       <Row>
         <Col xs={12} lg={6}>
           <h1
-            className="cursive text-8xl text-left text-green-100 mb-4 "
+            className="cursive text-8xl text-left text-green-100 mb-11"
             style={styleBioTitle}
           >
             About Me
@@ -116,7 +116,7 @@ export default function About() {
         </Col>
         <Col xs={12} lg={6}>
           <AnimatedOnScroll
-            animationIn="fadeInLeft"
+            animationIn="fadeIn"
             className="relative lg:top-1/4"
           >
             <Wordcloud></Wordcloud>
