@@ -30,6 +30,7 @@ export default function Home() {
         <section className="relative h-screen">
           <AnimatedOnScroll
             animationIn="fadeInDown"
+            animationInDelay={1000}
             style={{ top: "20%", position: "absolute" }}
           >
             <h1 className="text-6xl text-green-100 font-bold cursive leading-none home-name">

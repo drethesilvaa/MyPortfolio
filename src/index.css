@@ -13,6 +13,7 @@ body{
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   background: #1d1d1d;
+  overflow-x: hidden;
 }
 
 .cursive{

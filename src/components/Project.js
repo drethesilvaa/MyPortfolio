@@ -32,9 +32,12 @@ export default function Project() {
     <main className="pt-72">
       <section>
         <span id="myprojects"></span>
-        <h1 className="cursive text-8xl text-left text-green-100 mb-11">
-          My Projects
-        </h1>
+        <AnimatedOnScroll animationIn="fadeInDown">
+          <h1 className="cursive text-8xl text-left text-green-100 mb-11">
+            My Projects
+          </h1>
+        </AnimatedOnScroll>
+
         <section className="">
           <Row className="">
             {projectData &&
@@ -44,6 +47,7 @@ export default function Project() {
                     animationIn={
                       isOdd(index) === 0 ? "fadeInRight" : "fadeInLeft"
                     }
+                    animationOut={isOdd(index) === 0 ? "fadeOut" : "fadeOut"}
                   >
                     <div className="project-content">
                       <p className="project-type text-green-100">
