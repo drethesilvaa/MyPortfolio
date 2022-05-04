@@ -8,7 +8,7 @@ import NavBar from "./components/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  return (
+  const browser = (
     <BrowserRouter>
       <NavBar></NavBar>
       <Routes>
@@ -19,6 +19,25 @@ function App() {
         <Route path="/project" element={<Project />}></Route>
       </Routes>
     </BrowserRouter>
+  );
+  return (
+    <div>
+      <div class="wrapper hidden lg:block ">
+        <div class="line bg-green-100"></div>
+        <div class="wordwrapper">
+          <div class="word">
+            <a
+              className="text-green-100 hover:text-green-200 "
+              href="mailto:andressilva03@gmail.com"
+            >
+              andressilva03@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {browser}
+    </div>
   );
 }
 
