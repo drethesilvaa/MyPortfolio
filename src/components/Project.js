@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
-
+import { Col, Row } from "react-bootstrap";
+import { SocialIcon } from "react-social-icons";
+import { AnimatedOnScroll } from "react-animated-css-onscroll";
 function isOdd(num) {
   return num % 2;
 }
@@ -8,6 +10,7 @@ function isOdd(num) {
 export default function Project() {
   const [projectData, setProject] = useState(null);
 
+  const socialIconsStyle = { height: 45, width: 45 };
   useEffect(() => {
     sanityClient
       .fetch(
@@ -28,64 +31,67 @@ export default function Project() {
   return (
     <main className="pt-72">
       <section>
-        <h1 className="cursive text-8xl text-left text-green-100 mb-4 ">
-          My Projects
-        </h1>
-        <section className="grid grid-cols-1 gap-8">
-          {projectData &&
-            projectData.map((project, index) =>
-              isOdd(index) === 0 ? (
-                <article className="relative rounded-lg border-4 border-green-100 p-16">
-                  <h3 className="text-gray-800 text-3xl font-bold mb-2 hover:text-red-700">
-                    <a
-                      href={project.link}
-                      alt={project.title}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {project.title}
-                    </a>
-                  </h3>
-                  <div className="text-gray-500 text-xs space-x-4">
-                    <span>
-                      <strong className="font-bold">Finished on</strong>:{" "}
-                      {project.date === undefined
-                        ? "Developing"
-                        : new Date(project.date).toLocaleDateString()}
-                    </span>
-                    <span>
-                      <strong className="font-bold">
-                        Language and Framework
-                      </strong>
-                      : {project.Language_Frameworks}
-                    </span>
-                    <span>
-                      <strong className="font-bold">Type</strong>:{""}
-                      {project.projectType}
-                    </span>
-                    <p className="my-6 text-lg text-white leading-relaxed">
-                      {project.description}
-                    </p>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-red-500 font-bold hover:underline hover:text-red-400 text-xl"
-                    >
-                      View The Project{" "}
-                      <span role="img" aria-label="right pointer">
-                        👉
-                      </span>
-                    </a>
-                  </div>
-                </article>
-              ) : (
-                ""
-              )
-            )}
+        <span id="myprojects"></span>
+        <AnimatedOnScroll animationIn="fadeInDown">
+          <h1 className="cursive text-8xl text-left text-green-100 mb-11">
+            My Projects
+          </h1>
+        </AnimatedOnScroll>
+
+        <section className="">
+          <Row className="">
+            {projectData &&
+              projectData.map((project, index) => (
+                <Col key={index} xs={12} className="project">
+                  <AnimatedOnScroll
+                    animationIn={
+                      isOdd(index) === 0 ? "fadeInRight" : "fadeInLeft"
+                    }
+                    animationOut={isOdd(index) === 0 ? "fadeOut" : "fadeOut"}
+                  >
+                    <div className="project-content">
+                      <p className="project-type text-green-100">
+                        {" "}
+                        {project.projectType}
+                      </p>
+                      <h3 className="project-title">
+                        <strong>
+                          <a
+                            className="text-white"
+                            href={project.link}
+                            alt={project.title}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {project.title}
+                          </a>
+                        </strong>
+                      </h3>
+                      <div className="project-description w-full md:w-6/12">
+                        <p className="text-white">{project.description}</p>
+                      </div>
+                      <ul className="project-tech-list">
+                        <li className="text-white">
+                          {project.Language_Frameworks}
+                        </li>
+                      </ul>
+                      <div className="project-links mt-3">
+                        <SocialIcon
+                          url={project.link}
+                          className="mr-4"
+                          target={"_blank"}
+                          fgColor="#fff"
+                          style={socialIconsStyle}
+                        ></SocialIcon>
+                      </div>
+                    </div>
+                    <div className="project-image"></div>
+                  </AnimatedOnScroll>
+                </Col>
+              ))}
+          </Row>
         </section>
       </section>
-      <span id="myprojects"></span>
     </main>
   );
 }

@@ -79,50 +79,53 @@ export default function About() {
 
   return (
     <main className="relative">
+      <span id="aboutme"></span>
       <Row>
         <Col xs={12} lg={6}>
-          <h1
-            className="cursive text-8xl text-left text-green-100 mb-4 "
-            style={styleBioTitle}
-          >
-            About Me
-          </h1>
+          <AnimatedOnScroll animationIn="fadeInDown">
+            <h1
+              className="cursive text-8xl text-left text-green-100 mb-11"
+              style={styleBioTitle}
+            >
+              About Me
+            </h1>{" "}
+          </AnimatedOnScroll>
+
           <section className="rounded-lg lg:flex">
             {/* <img
             src={urlFor(author.authorImage).url()}
             className="rounded w-32 h-32 lg:w-64 lg:h-64 mr-8"
             alt={author.name}
           ></img> */}
-
-            <div className="text-lg flex flex-col justify-center">
-              {/* <h1 className="cursive text-8xl text-green-300 mb-4 ">
-                Hey there. I'm{" "}
-                <span className="text-green-100">{author.name}</span>
-              </h1> */}
-              <div className="prose lg:prose-xl text-white ">
-                {
-                  <SanityBlockContent
-                    blocks={author.bio}
-                    projectId={sanityClient.projectId}
-                    dataset={sanityClient.dataset}
-                    serializers={serializers}
-                  ></SanityBlockContent>
-                }
+            <AnimatedOnScroll animationIn="fadeInLeft">
+              <div className="text-lg flex flex-col justify-center">
+                {/* <h1 className="cursive text-8xl text-green-300 mb-4 ">
+            Hey there. I'm{" "}
+            <span className="text-green-100">{author.name}</span>
+          </h1> */}
+                <div className="prose lg:prose-xl text-white ">
+                  {
+                    <SanityBlockContent
+                      blocks={author.bio}
+                      projectId={sanityClient.projectId}
+                      dataset={sanityClient.dataset}
+                      serializers={serializers}
+                    ></SanityBlockContent>
+                  }
+                </div>
               </div>
-            </div>
-            <div></div>
+            </AnimatedOnScroll>
           </section>
         </Col>
         <Col xs={12} lg={6}>
           <AnimatedOnScroll
-            animationIn="fadeInLeft"
+            animationIn="fadeIn"
             className="relative lg:top-1/4"
           >
             <Wordcloud></Wordcloud>
           </AnimatedOnScroll>
         </Col>
       </Row>
-      <span id="aboutme"></span>
     </main>
   );
 }
