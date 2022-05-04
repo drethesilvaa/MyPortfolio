@@ -29,7 +29,7 @@ export default function About() {
         );
       },
       code: (props) =>
-        console.log("code block", props) || (
+        "" || (
           <pre data-language={props.node.language}>
             <code>{props.node.code}</code>
           </pre>
@@ -37,25 +37,23 @@ export default function About() {
       youtube: (props) => <pre>{JSON.stringify(props, null, 2)}</pre>,
     },
     list: (props) =>
-      console.log("list", props) ||
+      "" ||
       (props.type === "bullet" ? (
         <ul className="list-disc list-outside">{props.children}</ul>
       ) : (
         <ol className="list-decimal list-outside">{props.children}</ol>
       )),
     listItem: (props) =>
-      console.log("list", props) ||
+      "" ||
       (props.type === "bullet" ? (
         <li>{props.children}</li>
       ) : (
         <li>{props.children}</li>
       )),
     marks: {
-      strong: (props) =>
-        console.log("strong", props) || <strong>{props.children}</strong>,
-      em: (props) => console.log("em", props) || <em>{props.children}</em>,
-      code: (props) =>
-        console.log("code", props) || <code>{props.children}</code>,
+      strong: (props) => "" || <strong>{props.children}</strong>,
+      em: (props) => "" || <em>{props.children}</em>,
+      code: (props) => "" || <code>{props.children}</code>,
     },
   };
 
@@ -72,13 +70,13 @@ export default function About() {
         }`
       )
       .then((data) => setAuthor(data[0]))
-      .catch(console.error);
+      .catch();
   }, []);
 
   if (!author) return <div>Loading...</div>;
 
   return (
-    <main className="relative">
+    <main className="relative aboutsection">
       <span id="aboutme"></span>
       <Row>
         <Col xs={12} lg={6}>

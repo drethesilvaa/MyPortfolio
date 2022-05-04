@@ -6,6 +6,9 @@ export default function _Footer() {
     <AnimatedOnScroll animationIn="fadeIn">
       <footer className="pt-72 pb-4 text-center text-white">
         <h4>Designed & Built by Andre Silva</h4>
+        <a className="block lg:hidden " href="mailto:andressilva03@gmail.com">
+          andressilva03@gmail.com
+        </a>
       </footer>
     </AnimatedOnScroll>
   );

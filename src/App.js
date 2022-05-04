@@ -4,7 +4,6 @@ import SinglePost from "./components/SinglePost";
 import Post from "./components/Post";
 import Project from "./components/Project";
 import NavBar from "./components/NavBar";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -22,7 +21,7 @@ function App() {
   );
   return (
     <div>
-      <div class="wrapper hidden lg:block ">
+      <div class="wrapper hidden lg:block animated animatedFadeInUp fadeInUp ">
         <div class="line bg-green-100"></div>
         <div class="wordwrapper">
           <div class="word">
