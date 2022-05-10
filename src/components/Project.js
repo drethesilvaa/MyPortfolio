@@ -20,8 +20,7 @@ export default function Project() {
               Language_Frameworks,
               date,
               projectType,
-              link,
-              tags       
+              Links      
           }`
       )
       .then((data) => setProject(data))
@@ -76,13 +75,15 @@ export default function Project() {
                         </li>
                       </ul>
                       <div className="project-links mt-3">
-                        <SocialIcon
-                          url={project.link}
-                          className="mr-4"
-                          target={"_blank"}
-                          fgColor="#fff"
-                          style={socialIconsStyle}
-                        ></SocialIcon>
+                        {project.Links.map((link, index) => (
+                          <SocialIcon
+                            url={link}
+                            className="mr-4"
+                            target={"_blank"}
+                            fgColor="#fff"
+                            style={socialIconsStyle}
+                          ></SocialIcon>
+                        ))}
                       </div>
                     </div>
                     <div className="project-image"></div>

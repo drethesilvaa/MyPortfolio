@@ -33,15 +33,11 @@ export default {
       },
     },
     {
-      name: "link",
-      type: "url",
-    },
-    {
-      name: "tags",
+      name: "Links",
       type: "array",
       of: [
         {
-          type: "string",
+          type: "url",
         },
       ],
       option: {
