@@ -4,6 +4,7 @@ import SinglePost from "./components/SinglePost";
 import Post from "./components/Post";
 import Project from "./components/Project";
 import NavBar from "./components/NavBar";
+import "../src/stylesheets/animations.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
