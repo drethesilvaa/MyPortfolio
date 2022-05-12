@@ -3,7 +3,6 @@ import sanityClient from "../client.js";
 import { Col, Row } from "react-bootstrap";
 import { SocialIcon } from "react-social-icons";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
-import placeholderimage from "../images/bg-portfolio.jpg";
 
 function isOdd(num) {
   return num % 2;
@@ -22,6 +21,7 @@ export default function Project() {
               Language_Frameworks,
               date,
               projectType,
+              "projectImage": image.asset->url,
               Links      
           }`
       )
@@ -49,6 +49,7 @@ export default function Project() {
                       isOdd(index) === 0 ? "fadeInRight" : "fadeInLeft"
                     }
                     animationOut={isOdd(index) === 0 ? "fadeOut" : "fadeOut"}
+                    className="relative"
                   >
                     <div className="project-content">
                       <p className="project-type text-green-100">
@@ -88,8 +89,13 @@ export default function Project() {
                         ))}
                       </div>
                     </div>
-                    <div className="project-image">
-                      <img src={placeholderimage} alt="descricao"></img>
+                    <div
+                      className="project-image"
+                      style={{
+                        backgroundImage: "url(" + project.projectImage + ")",
+                      }}
+                    >
+                      <img src={project.projectImage} alt={project.title}></img>
                     </div>
                   </AnimatedOnScroll>
                 </Col>
