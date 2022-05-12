@@ -96,8 +96,11 @@ p {
 
 .row .project {
   text-align: right;
-  margin-top: 60px;
   transition: transform 500ms ease-in-out 25ms;
+}
+
+.row .project:not(:first-child){
+  margin-top: 80px;
 }
 
 .row .project:hover {
@@ -106,7 +109,6 @@ p {
 
 .row .project:nth-child(even) {
   text-align: left;
-  margin-top: 60px;
 }
 
 
