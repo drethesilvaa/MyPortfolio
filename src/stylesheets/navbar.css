@@ -62,3 +62,10 @@
     -webkit-transform: rotate(-45deg); transform: rotate(-45deg);
     -webkit-transition-delay: 0s, 0.2s; transition-delay: 0s, 0.2s;
   }
+
+  .nav-link-animation{
+    transition: transform 100ms ease-in-out 15ms;
+  }
+  .nav-link-animation:hover{
+    transform:translate3d(0px, -8px, 0px);
+  }
