@@ -55,7 +55,7 @@ export default function Project() {
                         ? "fadeInLeft"
                         : "fadeIn"
                     }
-                    animationOut={isOdd(index) === 0 ? "fadeOut" : "fadeOut"}
+                    // animationOut={isOdd(index) === 0 ? "fadeOut" : "fadeOut"}
                     className="relative"
                   >
                     <div className="project-content">
