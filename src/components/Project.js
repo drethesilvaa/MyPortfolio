@@ -3,6 +3,8 @@ import sanityClient from "../client.js";
 import { Col, Row } from "react-bootstrap";
 import { SocialIcon } from "react-social-icons";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
+import placeholderimage from "../images/bg-portfolio.jpg";
+
 function isOdd(num) {
   return num % 2;
 }
@@ -86,7 +88,9 @@ export default function Project() {
                         ))}
                       </div>
                     </div>
-                    <div className="project-image"></div>
+                    <div className="project-image">
+                      <img src={placeholderimage} alt="descricao"></img>
+                    </div>
                   </AnimatedOnScroll>
                 </Col>
               ))}

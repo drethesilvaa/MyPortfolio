@@ -96,10 +96,15 @@ p {
 
 .row .project {
   text-align: right;
+  margin-top: 60px;
 }
 .row .project:nth-child(even) {
   text-align: left;
-  margin-top: 40px;
+  margin-top: 60px;
+}
+
+.project-content{
+  padding: 40px;
 }
 
 .project-tech-list{
@@ -117,4 +122,31 @@ p {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     margin: 20px 0;
     display: inline-block;
+}
+
+.project-image {
+  position: absolute;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  z-index: -1;
+}
+@media screen and (max-width: 767px) {
+  .project-image {
+
+    width: 100%;
+
+  }
+  
+}
+
+.project-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.project:nth-child(even) .project-image {
+  right: 0;
 }
