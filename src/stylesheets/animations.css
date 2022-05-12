@@ -20,6 +20,8 @@
     }
   }
   
+  
+
   .animated {
     animation-duration: 1s;
     animation-delay: 1s;
@@ -27,6 +29,7 @@
     -webkit-animation-duration: 1s;
     -webkit-animation-fill-mode: both
   }
+
   
   .animatedFadeInUp {
     opacity: 0
@@ -37,4 +40,5 @@
     animation-name: fadeInUp;
     -webkit-animation-name: fadeInUp;
   }
+
   
