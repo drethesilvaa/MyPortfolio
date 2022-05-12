@@ -3,6 +3,7 @@ import sanityClient from "../client.js";
 import { Col, Row } from "react-bootstrap";
 import { SocialIcon } from "react-social-icons";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
+import { useMediaQuery } from "react-responsive";
 
 function isOdd(num) {
   return num % 2;
@@ -10,7 +11,7 @@ function isOdd(num) {
 
 export default function Project() {
   const [projectData, setProject] = useState(null);
-
+  const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
   const socialIconsStyle = { height: 45, width: 45 };
   useEffect(() => {
     sanityClient
@@ -46,7 +47,13 @@ export default function Project() {
                 <Col key={index} xs={12} className="project">
                   <AnimatedOnScroll
                     animationIn={
-                      isOdd(index) === 0 ? "fadeInRight" : "fadeInLeft"
+                      isOdd(index) === 0
+                        ? isBigScreen
+                          ? "fadeInRight"
+                          : "fadeIn"
+                        : isBigScreen
+                        ? "fadeInLeft"
+                        : "fadeIn"
                     }
                     animationOut={isOdd(index) === 0 ? "fadeOut" : "fadeOut"}
                     className="relative"

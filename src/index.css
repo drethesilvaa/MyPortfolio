@@ -97,11 +97,19 @@ p {
 .row .project {
   text-align: right;
   margin-top: 60px;
+  transition: transform 500ms ease-in-out 25ms;
 }
+
+.row .project:hover {
+  transform:translate3d(0px, -10px, 0px);
+}
+
 .row .project:nth-child(even) {
   text-align: left;
   margin-top: 60px;
 }
+
+
 
 .project-content{
   padding: 40px;
@@ -136,10 +144,15 @@ p {
     text-align: left;
 }
 @media screen and (max-width: 767px) {
+  .project .animated{
+    border: 1px solid #ffffff4d;
+  }
+  
   .project-image {
     width: 100%;
     opacity: 0.12;
   }
+
   
 }
 
