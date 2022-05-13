@@ -10,6 +10,12 @@ import "../stylesheets/navbar.css";
 
 require("bootstrap");
 
+const scrollWithOffset = (el) => {
+  const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+  const yOffset = -30;
+  window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
+};
+
 export default function NavBar() {
   const [toggle, setToggler] = useState(false);
 
@@ -62,8 +68,8 @@ export default function NavBar() {
                     <Link
                       to="/#myprojects"
                       onClick={() => setToggler((prevtoggle) => !prevtoggle)}
-                      smooth
                       className={stylenav}
+                      scroll={(el) => scrollWithOffset(el)}
                     >
                       Projects
                     </Link>
@@ -74,6 +80,7 @@ export default function NavBar() {
                       onClick={() => setToggler((prevtoggle) => !prevtoggle)}
                       smooth
                       className={stylenav}
+                      scroll={(el) => scrollWithOffset(el)}
                     >
                       About Me
                     </Link>
