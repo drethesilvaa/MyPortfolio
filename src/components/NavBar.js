@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // import { NavLink } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 import { HashLink as Link } from "react-router-hash-link";
@@ -10,7 +10,17 @@ import "../stylesheets/navbar.css";
 
 require("bootstrap");
 
+function navlinkonmobile() {}
+
 export default function NavBar() {
+  const [toggle, setToggler] = useState(false);
+
+  useEffect(() => {
+    toggle === true
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "auto");
+  }, [toggle]);
+
   const stylenav =
     "inline-flex items-center lg:py-3 px-3 lg:my-6 rounded text-green-100 hover:text-white tracking-wide text-2xl nav-link-animation";
 
@@ -22,7 +32,7 @@ export default function NavBar() {
 
   return (
     <header className="">
-      <Navbar bg="transparent" variant="dark" expand="lg">
+      <Navbar bg="transparent" variant="dark" expand="lg" onToggle={setToggler}>
         <Container>
           <AnimatedOnScroll
             animationIn="fadeIn"
@@ -41,20 +51,30 @@ export default function NavBar() {
           </AnimatedOnScroll>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto text-center lg:text-left">
               {isTabletOrMobile && (
                 <React.Fragment>
                   <Nav.Link>
-                    <Link to="/#myprojects" smooth className={stylenav}>
+                    <Link
+                      to="/#myprojects"
+                      onClick={navlinkonmobile}
+                      smooth
+                      className={stylenav}
+                    >
                       Projects
                     </Link>
                   </Nav.Link>
                   <Nav.Link>
-                    <Link to="/#aboutme" smooth className={stylenav}>
+                    <Link
+                      to="/#aboutme"
+                      onClick={navlinkonmobile}
+                      smooth
+                      className={stylenav}
+                    >
                       About Me
                     </Link>
                   </Nav.Link>
-                  <div className="inline-flex lg:py-3 px-3 lg:my-6">
+                  <div className="inline lg:inline-flex lg:py-3 px-3 lg:my-6">
                     <SocialIcon
                       url="https://github.com/drethesilvaa"
                       className="mr-4 nav-link-animation"
@@ -105,7 +125,7 @@ export default function NavBar() {
                     animationIn="fadeIn"
                     animationInDelay={1500}
                   >
-                    <div className="inline-flex lg:py-3 px-3 lg:my-6 ">
+                    <div className="inline lg:inline-flex py-3 px-3 lg:my-6 ">
                       <SocialIcon
                         url="https://github.com/drethesilvaa"
                         className="mr-4 nav-link-animation "
