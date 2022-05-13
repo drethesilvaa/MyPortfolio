@@ -27,7 +27,7 @@ export default function Home() {
           ></img>
         </AnimatedOnScroll> */}
 
-        <section className="relative h-screen">
+        <section id="mainDiv" className="relative h-screen">
           <AnimatedOnScroll
             animationIn="fadeInDown"
             animationInDelay={1000}
