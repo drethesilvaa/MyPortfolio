@@ -10,8 +10,6 @@ import "../stylesheets/navbar.css";
 
 require("bootstrap");
 
-function navlinkonmobile() {}
-
 export default function NavBar() {
   const [toggle, setToggler] = useState(false);
 
@@ -32,7 +30,13 @@ export default function NavBar() {
 
   return (
     <header className="">
-      <Navbar bg="transparent" variant="dark" expand="lg" onToggle={setToggler}>
+      <Navbar
+        bg="transparent"
+        variant="dark"
+        expand="lg"
+        expanded={toggle}
+        onToggle={setToggler}
+      >
         <Container>
           <AnimatedOnScroll
             animationIn="fadeIn"
@@ -57,7 +61,7 @@ export default function NavBar() {
                   <Nav.Link>
                     <Link
                       to="/#myprojects"
-                      onClick={navlinkonmobile}
+                      onClick={() => setToggler((prevtoggle) => !prevtoggle)}
                       smooth
                       className={stylenav}
                     >
@@ -67,7 +71,7 @@ export default function NavBar() {
                   <Nav.Link>
                     <Link
                       to="/#aboutme"
-                      onClick={navlinkonmobile}
+                      onClick={() => setToggler((prevtoggle) => !prevtoggle)}
                       smooth
                       className={stylenav}
                     >
