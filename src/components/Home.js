@@ -6,6 +6,8 @@ import Projects from "./Project";
 import Footer from "./Footer";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { Container } from "react-bootstrap";
+import Lighsaber from "./Lighsaber";
+import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
   // const homestyle = {
@@ -15,6 +17,7 @@ export default function Home() {
   //   "background-repeat": "no-repeat",
   //   "background-size": "cover",
   // };
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 991px)" });
 
   return (
     <main>
@@ -31,9 +34,13 @@ export default function Home() {
           <AnimatedOnScroll
             animationIn="fadeInDown"
             animationInDelay={1000}
-            style={{ top: "20%", position: "absolute" }}
+            style={{ top: "20%", position: "relative" }}
           >
-            <h1 className="text-6xl text-green-100 font-bold cursive leading-none home-name">
+            <Lighsaber
+              angle={isTabletOrMobile == true ? "90" : "0"}
+              color="yoda"
+            ></Lighsaber>
+            <h1 className="text-6xl text-green-100 font-bold cursive leading-none home-name  m-0 pl-0 pb-10 lg:pl-10 lg:pb-0">
               Hi, <br></br> I'm Andre, <br></br> Full Stack Developer
             </h1>
           </AnimatedOnScroll>
