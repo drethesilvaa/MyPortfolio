@@ -37,7 +37,7 @@ export default function Home() {
             style={{ top: "20%", position: "relative" }}
           >
             <Lighsaber
-              angle={isTabletOrMobile == true ? "90" : "0"}
+              angle={isTabletOrMobile === true ? "90" : "0"}
               color="yoda"
             ></Lighsaber>
             <h1 className="text-6xl text-green-100 font-bold cursive leading-none home-name  m-0 pl-0 pb-10 lg:pl-10 lg:pb-0">
