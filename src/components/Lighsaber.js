@@ -22,7 +22,7 @@ export default function Lighsaber(props) {
         <input
           type="checkbox"
           id={props.color + "-example"}
-          defaultChecked={checked}
+          defaultChecked={true}
           onChange={() => setChecked(!checked)}
         ></input>
         <div class="switch"></div>
