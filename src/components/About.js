@@ -66,7 +66,11 @@ export default function About() {
         `*[_type == "author"]{
             name,
             bio,
-            "authorImage": image.asset->url
+            "authorImage": image.asset->url,
+            "Skills": *[_type=='skills']{ 
+              skill,
+              skill_Level
+            },
         }`
       )
       .then((data) => setAuthor(data[0]))
@@ -74,6 +78,8 @@ export default function About() {
   }, []);
 
   if (!author) return <div> Loading... </div>;
+
+  console.log(author);
 
   return (
     <main className="relative aboutsection">
@@ -115,6 +121,7 @@ export default function About() {
             <MyInfo
               userName={author.name}
               userImage={author.authorImage}
+              userSkills={author.Skills}
             ></MyInfo>
           </AnimatedOnScroll>
         </Col>

@@ -106,7 +106,7 @@ h2 {
 
 .bar .progress-line span {
   position: absolute;
-  background: #25b79f;
+  background: rgb(135, 220, 90) 100%;
   height: 100%;
   border-radius: 10px;
   transform: scaleX(0);
@@ -121,7 +121,7 @@ h2 {
 }
 
 .progress-line .html {
-  width: 80%;
+  width: var(--my-var);
 }
 .progress-line .css {
   width: 70%;
@@ -134,48 +134,6 @@ h2 {
 }
 .progress-line .c {
   width: 90%;
-}
-
-.bar .progress-line span::before {
-  position: absolute;
-  content: "";
-  height: 0;
-  right: 0;
-  top: -14px;
-  width: 0;
-  border: 7px solid transparent;
-  border-bottom-width: 0px;
-  border-right-width: 0px;
-  border-top-style: #f0f0f0;
-  border-top-color: #07374a;
-}
-
-.bar .progress-line span::after {
-  position: absolute;
-  right: 0;
-  top: -28px;
-  color: #f0f0f0;
-  font-size: 12px;
-  font-weight: 700;
-  background: #07374a;
-  padding: 1px 8px;
-  border-radius: 3px;
-}
-
-.progress-line .html::after {
-  content: "80%";
-}
-.progress-line .css::after {
-  content: "70%";
-}
-.progress-line .bootstrap::after {
-  content: "82%";
-}
-.progress-line .javascript::after {
-  content: "62%";
-}
-.progress-line .c::after {
-  content: "90%";
 }
 
 /* ////........Media Query........//// */
