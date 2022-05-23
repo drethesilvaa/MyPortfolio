@@ -3,6 +3,7 @@ import React from "react";
 // import * as am5wc from "@amcharts/amcharts5/wc";
 // import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import "../stylesheets/myinfo.css";
+import { MdAdsClick } from "react-icons/md";
 
 export default function App(props) {
   const backgroundImage = {
@@ -12,6 +13,7 @@ export default function App(props) {
   return (
     <div class="card card0" style={backgroundImage}>
       <div class="border">
+        <MdAdsClick className="icon"></MdAdsClick>
         <h2>{props.userName}</h2>
         <div class="skills fa">
           <div class="skills-bar">

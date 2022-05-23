@@ -66,12 +66,12 @@ export default function NavBar() {
                 <React.Fragment>
                   <Nav.Link>
                     <Link
-                      to="/#myprojects"
+                      to="/#mywork"
                       onClick={() => setToggler((prevtoggle) => !prevtoggle)}
                       className={stylenav}
                       scroll={(el) => scrollWithOffset(el)}
                     >
-                      Projects
+                      Work
                     </Link>
                   </Nav.Link>
                   <Nav.Link>
@@ -85,29 +85,6 @@ export default function NavBar() {
                       About Me
                     </Link>
                   </Nav.Link>
-                  <div className="inline lg:inline-flex lg:py-3 px-3 lg:my-6">
-                    <SocialIcon
-                      url="https://github.com/drethesilvaa"
-                      className="mr-4 nav-link-animation"
-                      target={"_blank"}
-                      fgColor="#fff"
-                      style={socialIconsStyle}
-                    ></SocialIcon>
-                    <SocialIcon
-                      url="https://www.linkedin.com/in/andréssilva/"
-                      className="mr-4 nav-link-animation"
-                      target={"_blank"}
-                      fgColor="#fff"
-                      style={socialIconsStyle}
-                    ></SocialIcon>
-                    <SocialIcon
-                      url="https://www.instagram.com/drethegallery/"
-                      className="mr-4 nav-link-animation"
-                      target={"_blank"}
-                      fgColor="#fff"
-                      style={socialIconsStyle}
-                    ></SocialIcon>
-                  </div>
                 </React.Fragment>
               )}
               {isBigScreen && (
@@ -117,8 +94,8 @@ export default function NavBar() {
                     animationInDelay={1000}
                   >
                     <Nav.Link>
-                      <Link to="/#myprojects" smooth className={stylenav}>
-                        Projects
+                      <Link to="/#mywork" smooth className={stylenav}>
+                        Work
                       </Link>
                     </Nav.Link>
                   </AnimatedOnScroll>

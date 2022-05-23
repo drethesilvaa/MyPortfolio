@@ -52,7 +52,7 @@
 }
 
 .card0:hover .bar .progress-line span {
-  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+  animation: animate 1s 0.5s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
 
 h2 {
@@ -134,6 +134,20 @@ h2 {
 }
 .progress-line .c {
   width: 90%;
+}
+
+.icon {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  color: white;
+  height: 2em;
+  width: 3em;
+  transition: transform 0.2s;
+}
+
+.card0:hover .icon {
+  transform: scale(1.2);
 }
 
 /* ////........Media Query........//// */

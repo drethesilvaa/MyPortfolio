@@ -79,8 +79,6 @@ export default function About() {
 
   if (!author) return <div> Loading... </div>;
 
-  console.log(author);
-
   return (
     <main className="relative aboutsection">
       <span id="aboutme"> </span>

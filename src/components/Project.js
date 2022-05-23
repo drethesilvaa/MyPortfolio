@@ -33,10 +33,10 @@ export default function Project() {
   return (
     <main className="pt-72">
       <section>
-        <span id="myprojects"></span>
+        <span id="mywork"></span>
         <AnimatedOnScroll animationIn="fadeInDown">
           <h1 className="cursive text-8xl text-left text-green-100 mb-11">
-            My Projects
+            Work
           </h1>
         </AnimatedOnScroll>
 
