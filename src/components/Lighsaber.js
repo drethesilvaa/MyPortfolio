@@ -7,8 +7,6 @@ export default function Lighsaber(props) {
   //     angle: props.angle,
   //   });
 
-  console.log(props);
-
   const [checked, setChecked] = useState(true);
 
   const rotatestyle = {
