@@ -1,9 +1,14 @@
 import React from "react";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { SocialIcon } from "react-social-icons";
+// import styled from "styled-components";
 
 export default function _Footer() {
   const socialIconsStyle = { height: 35, width: 35 };
+
+  // const Footer = styled.footer`
+  // background: ${({ theme }) => theme.footer_bg};
+  // }`;
 
   return (
     <AnimatedOnScroll animationIn="fadeIn">

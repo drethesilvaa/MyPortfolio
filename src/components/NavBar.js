@@ -34,8 +34,13 @@ export default function NavBar() {
 
   const socialIconsStyle = { height: 35, width: 35 };
 
+  function btnThemeonClick() {
+    document.getElementById("switchTheme").click();
+  }
+
   return (
     <header className="">
+      <button onClick={btnThemeonClick}> THEME </button>
       <Navbar
         bg="transparent"
         variant="dark"
