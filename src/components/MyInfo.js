@@ -2,28 +2,30 @@ import React from "react";
 // import * as am5 from "@amcharts/amcharts5";
 // import * as am5wc from "@amcharts/amcharts5/wc";
 // import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
-import "../stylesheets/myinfo.css";
+import "../stylesheets/StyleMyInfo.js";
 import { MdAdsClick } from "react-icons/md";
+import { StyleMyInfo } from "../stylesheets/StyleMyInfo";
 
 export default function App(props) {
   const backgroundImage = {
-    "background-image": "url(" + props.userImage + ")  ",
+    backgroundImage: "url(" + props.userImage + ")  ",
   };
 
   return (
-    <div class="card card0" style={backgroundImage}>
-      <div class="border">
+    <div className="card card0" style={backgroundImage}>
+      <StyleMyInfo></StyleMyInfo>
+      <div className="border">
         <MdAdsClick className="icon"></MdAdsClick>
         <h2>{props.userName}</h2>
-        <div class="skills fa">
-          <div class="skills-bar">
+        <div className="skills fa">
+          <div className="skills-bar">
             {props.userSkills.map((skill, index) => {
               return (
-                <div key={index} class="bar">
-                  <div class="info">
+                <div key={index} className="bar">
+                  <div className="info">
                     <span>{skill.skill}</span>
                   </div>
-                  <div class="progress-line">
+                  <div className="progress-line">
                     <span
                       style={{ "--my-var": "" + skill.skill_Level + "%" }}
                       className="html"
@@ -33,36 +35,36 @@ export default function App(props) {
               );
             })}
 
-            {/* <div class="bar">
-              <div class="info">
+            {/* <div className="bar">
+              <div className="info">
                 <span>CSS</span>
               </div>
-              <div class="progress-line">
-                <span class="css"></span>
+              <div className="progress-line">
+                <span className="css"></span>
               </div>
             </div>
-            <div class="bar">
-              <div class="info">
+            <div className="bar">
+              <div className="info">
                 <span>BOOTSTRAP</span>
               </div>
-              <div class="progress-line">
-                <span class="bootstrap"></span>
+              <div className="progress-line">
+                <span className="bootstrap"></span>
               </div>
             </div>
-            <div class="bar">
-              <div class="info">
+            <div className="bar">
+              <div className="info">
                 <span>JAVASCRIPT</span>
               </div>
-              <div class="progress-line">
-                <span class="javascript"></span>
+              <div className="progress-line">
+                <span className="javascript"></span>
               </div>
             </div>
-            <div class="bar">
-              <div class="info">
+            <div className="bar">
+              <div className="info">
                 <span>C PROGRAMMING</span>
               </div>
-              <div class="progress-line">
-                <span class="c"></span>
+              <div className="progress-line">
+                <span className="c"></span>
               </div>
             </div> */}
           </div>

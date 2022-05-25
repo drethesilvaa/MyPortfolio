@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components";
+
+export const Stylenavbar = createGlobalStyle`
+
 @media screen and (max-width: 991px) {
   .navbar-collapse {
     position: absolute;
@@ -6,7 +10,7 @@
     width: 100vw;
     z-index: 10;
     left: 0;
-    background: #2c2c2c;
+    background: ${({ theme }) => theme.menuBg};
     transition: height 1s ease;
   }
 
@@ -50,7 +54,7 @@
   width: 22px;
   height: 4px;
   --tw-text-opacity: 1;
-  background-color: rgba(209, 250, 229, var(--tw-text-opacity));
+  background-color: ${({ theme }) => theme.hamburguerMenuIconColor};
   display: block;
 }
 .navbar-toggler span:before {
@@ -108,3 +112,5 @@
 .nav-link-animation:hover {
   transform: translate3d(0px, -8px, 0px);
 }
+
+  `;

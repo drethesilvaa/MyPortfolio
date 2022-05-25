@@ -86,7 +86,7 @@ export default function About() {
         <Col xs={12} lg={6}>
           <AnimatedOnScroll animationIn="fadeInDown">
             <h1
-              className="cursive text-8xl text-left text-green-100 mb-11"
+              className="cursive text-8xl text-left main-titleColor mb-11"
               style={styleBioTitle}
             >
               About Me
@@ -97,7 +97,7 @@ export default function About() {
             <AnimatedOnScroll animationIn="fadeInLeft">
               <div className="text-lg flex flex-col justify-center">
                 {/* <h1 className="cursive text-8xl text-green-300 mb-4 "> Hey there. I'm <span className="text-green-100">{author.name}</span></h1> */}
-                <div className="prose lg:prose-xl text-white ">
+                <div className="prose lg:prose-xl main-textColor">
                   {
                     <SanityBlockContent
                       blocks={author.bio}

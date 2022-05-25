@@ -35,7 +35,7 @@ export default function Project() {
       <section>
         <span id="mywork"></span>
         <AnimatedOnScroll animationIn="fadeInDown">
-          <h1 className="cursive text-8xl text-left text-green-100 mb-11">
+          <h1 className="cursive text-8xl main-titleColor text-green-100 mb-11">
             Work
           </h1>
         </AnimatedOnScroll>
@@ -59,34 +59,27 @@ export default function Project() {
                     className="relative"
                   >
                     <div className="project-content">
-                      <p className="project-type text-green-100">
+                      <p className="project-type main-titleColor">
                         {" "}
                         {project.projectType}
                       </p>
                       <h3 className="project-title">
-                        <strong>
-                          <a
-                            className="text-white"
-                            href={project.link}
-                            alt={project.title}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {project.title}
-                          </a>
+                        <strong className="main-textColor">
+                          {project.title}
                         </strong>
                       </h3>
                       <div className="project-description w-full md:w-6/12">
-                        <p className="text-white">{project.description}</p>
+                        <p className="main-textColor">{project.description}</p>
                       </div>
                       <ul className="project-tech-list">
-                        <li className="text-white">
+                        <li className="main-textColor">
                           {project.Language_Frameworks}
                         </li>
                       </ul>
                       <div className="project-links mt-3">
                         {project.Links.map((link, index) => (
                           <SocialIcon
+                            key={index}
                             url={link}
                             className="mr-4"
                             target={"_blank"}
