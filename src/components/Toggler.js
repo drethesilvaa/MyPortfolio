@@ -1,6 +1,7 @@
 import React from "react";
 import { func, string } from "prop-types";
 import styled from "styled-components";
+import { RiMoonClearLine, RiSunLine } from "react-icons/ri";
 const Button = styled.button`
   display:none;
   }
@@ -8,8 +9,12 @@ const Button = styled.button`
 
 const Toggle = ({ theme, toggleTheme }) => {
   return (
-    <Button id="switchTheme" onClick={toggleTheme}>
-      Switch Theme
+    <Button className="dark_dayIcon" id="switchTheme" onClick={toggleTheme}>
+      {theme === "light" ? (
+        <RiMoonClearLine></RiMoonClearLine>
+      ) : (
+        <RiSunLine></RiSunLine>
+      )}
     </Button>
   );
 };

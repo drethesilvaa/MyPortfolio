@@ -19,7 +19,7 @@ function App() {
     <BrowserRouter>
       <NavBar></NavBar>
       <Routes>
-        <Route exact path="/" element={<Home />}></Route>
+        <Route exact="true" path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/post/:slug" element={<SinglePost />}></Route>
         <Route path="/post" element={<Post />}></Route>
@@ -33,25 +33,23 @@ function App() {
   return (
     <ThemeProvider theme={themeMode}>
       <>
-        <Toggle theme={theme} toggleTheme={themeToggler} />
         <GlobalStyles />
-        <div>
-          <div class="wrapper hidden lg:block animated animatedFadeInUp fadeInUp ">
-            <div class="line bg-green-100"></div>
-            <div class="wordwrapper">
-              <div class="word">
-                <a
-                  className="text-green-100 hover:text-green-200 "
-                  href="mailto:andressilva03@gmail.com"
-                >
-                  andressilva03@gmail.com
-                </a>
-              </div>
+        <div className="wrapper animated animatedFadeInUp fadeInUp ">
+          <div className={"line " + themeMode.emailLineBg}></div>
+          <div className="wordwrapper">
+            <div className="word">
+              <a
+                className={themeMode.emailTextClass}
+                href="mailto:andressilva03@gmail.com"
+              >
+                andressilva03@gmail.com
+              </a>
+              <Toggle theme={theme} toggleTheme={themeToggler} />
             </div>
           </div>
-
-          {browser}
         </div>
+
+        {browser}
       </>
     </ThemeProvider>
   );

@@ -1,6 +1,4 @@
 import React from "react";
-// import image from "../images/bg-portfolio.jpg";
-// import background from "../images/bg2.jpg";
 import About from "./About";
 import Projects from "./Project";
 import Footer from "./Footer";
@@ -8,15 +6,11 @@ import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { Container } from "react-bootstrap";
 import Lighsaber from "./Lighsaber";
 import { useMediaQuery } from "react-responsive";
+import { useTheme } from "styled-components";
 
 export default function Home() {
-  // const homestyle = {
-  //   background: `url(${background})`,
-  //   height: "100%",
-  //   "background-position": "center",
-  //   "background-repeat": "no-repeat",
-  //   "background-size": "cover",
-  // };
+  const theme = useTheme();
+
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 991px)" });
 
   return (
@@ -38,9 +32,9 @@ export default function Home() {
           >
             <Lighsaber
               angle={isTabletOrMobile === true ? "90" : "0"}
-              color="yoda"
+              color={theme.lightsaber}
             ></Lighsaber>
-            <h1 className="text-6xl text-green-100 font-bold cursive leading-none home-name  m-0 pl-0 pb-10 lg:pl-10 lg:pb-0">
+            <h1 className="text-6xl main-titleColor font-bold cursive leading-none home-name  m-0 pl-0 pb-10 lg:pl-10 lg:pb-0">
               Hi, <br></br> I'm Andre, <br></br> Full Stack Developer
             </h1>
           </AnimatedOnScroll>

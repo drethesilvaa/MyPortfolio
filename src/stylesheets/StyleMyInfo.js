@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+export const StyleMyInfo = createGlobalStyle`
 .border {
   height: 425px;
   width: 391px;
@@ -106,7 +109,7 @@ h2 {
 
 .bar .progress-line span {
   position: absolute;
-  background: rgb(135, 220, 90) 100%;
+  background:  ${({ theme }) => theme.myInfoBarColor};
   height: 100%;
   border-radius: 10px;
   transform: scaleX(0);
@@ -185,3 +188,5 @@ h2 {
     width: 310px;
   }
 }
+
+  `;

@@ -5,8 +5,8 @@ import { HashLink as Link } from "react-router-hash-link";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { useMediaQuery } from "react-responsive";
-
-import "../stylesheets/navbar.css";
+import { useTheme } from "styled-components";
+import { Stylenavbar as NavStyle } from "../stylesheets/Stylenavbar";
 
 require("bootstrap");
 
@@ -18,6 +18,7 @@ const scrollWithOffset = (el) => {
 
 export default function NavBar() {
   const [toggle, setToggler] = useState(false);
+  const theme = useTheme();
 
   useEffect(() => {
     toggle === true
@@ -26,7 +27,8 @@ export default function NavBar() {
   }, [toggle]);
 
   const stylenav =
-    "inline-flex items-center lg:py-3 px-3 lg:my-6 rounded text-green-100 hover:text-white tracking-wide text-2xl nav-link-animation";
+    "inline-flex items-center lg:py-3 px-3 lg:my-6 rounded main-titleColor tracking-wide text-2xl nav-link-animation " +
+    theme.classForNav;
 
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 991px)" });
   const isBigScreen = useMediaQuery({ query: "(min-width: 992px)" });
@@ -34,13 +36,9 @@ export default function NavBar() {
 
   const socialIconsStyle = { height: 35, width: 35 };
 
-  function btnThemeonClick() {
-    document.getElementById("switchTheme").click();
-  }
-
   return (
     <header className="">
-      <button onClick={btnThemeonClick}> THEME </button>
+      <NavStyle></NavStyle>
       <Navbar
         bg="transparent"
         variant="dark"
@@ -57,8 +55,11 @@ export default function NavBar() {
             <Navbar.Brand href="#home">
               <Link
                 to="/"
-                exact
-                className="inline-flex items-center py-6 px-3 mr-4 text-green-100 hover:text-white text-4xl font-bold cursive tracking-widest"
+                exact="true"
+                className={
+                  "inline-flex items-center py-6 px-3 mr-4 main-titleColor text-4xl font-bold cursive tracking-widest " +
+                  theme.classForNav
+                }
               >
                 Andre Silva
               </Link>

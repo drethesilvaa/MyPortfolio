@@ -1,18 +1,28 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
+*:not([class*="animated"]):not(.wrapper):not(.fadeInUp){
+    transition: all 0.50s linear;
+}
+
   body {
     background: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     overflow-x: hidden;
-    transition: all 0.50s linear;
   }
   
 header{
     font-family: 'Square Peg', cursive;
     font-weight: 700;
+  }
+
+  .main-titleColor{
+    color: ${({ theme }) => theme.mainTitleColor};
+  }
+
+  .main-textColor{
+    color: ${({ theme }) => theme.mainTextColor};
   }
   
   
@@ -48,7 +58,7 @@ header{
       left: 0;
       right: 0;
       top: 0;
-      margin-top: -12px;
+      margin-top: -50px;
       z-index: 30;
       writing-mode: vertical-rl;
       text-orientation: mixed;
@@ -58,14 +68,47 @@ header{
     letter-spacing: 1px;
     padding: 3px;
   }
+
+  .dark_dayIcon{
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+  }
+
+  .dark_dayIcon svg{
+    width: 35px;
+    height: 35px;
+    color: ${({ theme }) => theme.themeIcon};
+  }
+
+  
+  @media screen and (max-width:1023px){
+
+    .wrapper{
+        visibility: hidden;
+    }
+
+
+    .dark_dayIcon{
+        display: inline-block;
+        position: relative;
+        bottom: 0;
+        right: 0;
+      }
+  }
   
   a{
     text-decoration: none;
-    color: rgb(154 255 203)
+    color: ${({ theme }) => theme.mainLinkColor};
   }
   
-  a:hover{
-    color: rgb(21 255 134);
+  a:hover {
+    color: ${({ theme }) => theme.mainLinkHover};
+  }
+
+  .bg-1da1f2{
+    background-color:#1da1f2;
   }
   
   .home-name{
@@ -74,6 +117,7 @@ header{
     font-weight: 800;
   
   }
+
   
   @media screen and (max-width: 991px) {
     .home-name{
@@ -128,7 +172,7 @@ header{
   .project-description{
     position: relative;
       padding: 25px;
-      background-color: #4d4d83;
+      background-color: ${({ theme }) => theme.projectDescriptionBg};
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       margin: 20px 0;
       display: inline-block;

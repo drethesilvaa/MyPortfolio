@@ -14,8 +14,8 @@ export default function Lighsaber(props) {
   };
 
   return (
-    <div class="example-item">
-      <div class="lightsaber" style={rotatestyle}>
+    <div className="example-item">
+      <div className="lightsaber" style={rotatestyle}>
         <label htmlFor={props.color + "-example"}></label>
         <input
           type="checkbox"
@@ -23,8 +23,8 @@ export default function Lighsaber(props) {
           defaultChecked={true}
           onChange={() => setChecked(!checked)}
         ></input>
-        <div class="switch"></div>
-        <div class={"plasma " + props.color}></div>
+        <div className="switch"></div>
+        <div className={"plasma " + props.color}></div>
       </div>
     </div>
   );
