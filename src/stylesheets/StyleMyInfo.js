@@ -8,17 +8,18 @@ export const StyleMyInfo = createGlobalStyle`
   border-radius: 10px;
   transition: border 1s;
   position: relative;
+  border: 0 !important;
 }
 
 .border:hover {
-  border: 1px solid #fff;
+  border: 0 !important;
 }
 
 .card {
   height: 435px;
   width: 400px;
   background: #808080;
-  border-radius: 10px;
+  border-radius: 64% 36% 33% 67% / 44% 50% 50% 56%;
   transition: background 0.8s;
   overflow: hidden;
   background: #000;
@@ -74,13 +75,14 @@ h2 {
 
 .skills {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .skills-bar {
   padding: 0px 12px;
+    transform: scale(0.9);
 }
 
 .skills-bar .bar {
@@ -141,12 +143,12 @@ h2 {
 
 .icon {
   position: absolute;
-  right: 20px;
-  bottom: 15px;
+  right: 50px;
+  bottom: 45px;
   color: white;
   height: 2em;
   width: 3em;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease 0s;
 }
 
 .card0:hover .icon {
