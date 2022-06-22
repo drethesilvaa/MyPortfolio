@@ -16,7 +16,7 @@ export default function App(props) {
       <StyleMyInfo></StyleMyInfo>
       <div className="border">
         <MdAdsClick className="icon"></MdAdsClick>
-        <h2>{props.userName}</h2>
+        {/* <h2>{props.userName}</h2> */}
         <div className="skills fa">
           <div className="skills-bar">
             {props.userSkills.map((skill, index) => {
