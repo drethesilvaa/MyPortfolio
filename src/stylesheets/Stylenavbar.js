@@ -2,6 +2,12 @@ import { createGlobalStyle } from "styled-components";
 
 export const Stylenavbar = createGlobalStyle`
 
+header{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
 @media screen and (max-width: 991px) {
   .navbar-collapse {
     position: absolute;

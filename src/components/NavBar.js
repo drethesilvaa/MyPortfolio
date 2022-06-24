@@ -52,6 +52,19 @@ export default function NavBar() {
             animationInDelay={500}
             screenOffset={0}
           >
+            {/* <div className="inline lg:hidden">
+              <button
+                className="dark_dayIcon"
+                id="switchTheme"
+                onClick={toggleonClick}
+              >
+                {themeName === "light" ? (
+                  <RiMoonClearLine></RiMoonClearLine>
+                ) : (
+                  <RiSunLine></RiSunLine>
+                )}
+              </button>
+            </div> */}
             <Navbar.Brand href="#home">
               <Link
                 to="/"
@@ -65,6 +78,7 @@ export default function NavBar() {
               </Link>
             </Navbar.Brand>
           </AnimatedOnScroll>
+
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto text-center lg:text-left">
