@@ -80,8 +80,8 @@ export default function About() {
   if (!author) return <div> Loading... </div>;
 
   return (
-    <main className="relative aboutsection">
-      <span id="aboutme"> </span>
+    <main className="relative aboutsection pb-72" id="aboutme">
+      <span> </span>
       <Row>
         <Col xs={12} lg={6}>
           <AnimatedOnScroll animationIn="fadeInDown">

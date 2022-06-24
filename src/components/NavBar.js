@@ -12,7 +12,7 @@ require("bootstrap");
 
 const scrollWithOffset = (el) => {
   const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-  const yOffset = -30;
+  const yOffset = -150;
   window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
 };
 
@@ -114,7 +114,12 @@ export default function NavBar() {
                     animationInDelay={1000}
                   >
                     <Nav.Link>
-                      <Link to="/#mywork" smooth className={stylenav}>
+                      <Link
+                        to="/#mywork"
+                        smooth
+                        className={stylenav}
+                        scroll={(el) => scrollWithOffset(el)}
+                      >
                         Work
                       </Link>
                     </Nav.Link>
@@ -124,7 +129,12 @@ export default function NavBar() {
                     animationInDelay={1250}
                   >
                     <Nav.Link>
-                      <Link to="/#aboutme" smooth className={stylenav}>
+                      <Link
+                        to="/#aboutme"
+                        smooth
+                        className={stylenav}
+                        scroll={(el) => scrollWithOffset(el)}
+                      >
                         About Me
                       </Link>
                     </Nav.Link>
