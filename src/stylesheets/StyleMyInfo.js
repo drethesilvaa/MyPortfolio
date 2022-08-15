@@ -38,10 +38,22 @@ export const StyleMyInfo = createGlobalStyle`
   background-repeat: no-repeat;
 }
 
+.card0:hover::before{
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0,0,0,0.25);
+}
+
 .card0:hover {
   background-size: 600px;
   background-position: left;
 }
+
+
 
 .card0:hover h2 {
   opacity: 1;
