@@ -7,21 +7,17 @@ import { Container } from "react-bootstrap";
 import Lighsaber from "./Lighsaber";
 import { useMediaQuery } from "react-responsive";
 import { useTheme } from "styled-components";
-import TextTransition from "react-text-transition";
 
 export default function Home() {
-  const TEXTS = ["Front End Developer", "Full Stack Developer"];
-
   const theme = useTheme();
-  const [index, setIndex] = React.useState(0);
 
-  React.useEffect(() => {
-    const intervalId = setInterval(
-      () => setIndex((index) => index + 1),
-      15000 // every 15 seconds
-    );
-    return () => clearTimeout(intervalId);
-  }, []);
+  // React.useEffect(() => {
+  //   const intervalId = setInterval(
+  //     () => setIndex((index) => index + 1),
+  //     15000 // every 15 seconds
+  //   );
+  //   return () => clearTimeout(intervalId);
+  // }, []);
 
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 991px)" });
 
@@ -47,8 +43,7 @@ export default function Home() {
               color={theme.lightsaber}
             ></Lighsaber>
             <h1 className="text-6xl main-titleColor font-bold cursive leading-none home-name  m-0 pl-0 pb-10 lg:pl-10 lg:pb-0">
-              Hi, <br></br> I'm Andre,
-              {<TextTransition>{TEXTS[index % TEXTS.length]}</TextTransition>}
+              Hi, <br></br> I'm Andre, <br></br> UI/UX Front End Developer
             </h1>
           </AnimatedOnScroll>
         </section>

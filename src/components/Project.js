@@ -31,9 +31,9 @@ export default function Project() {
   }, []);
 
   return (
-    <main className="pt-72">
+    <main className="" id="mywork">
+      <span></span>
       <section>
-        <span id="mywork"></span>
         <AnimatedOnScroll animationIn="fadeInDown">
           <h1 className="cursive text-8xl main-titleColor text-green-100 mb-11">
             Work
