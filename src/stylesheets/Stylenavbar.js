@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const Stylenavbar = createGlobalStyle`
 
 header{
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 999;
 }

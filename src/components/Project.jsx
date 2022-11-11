@@ -44,7 +44,7 @@ export default function Project() {
           <Row className="">
             {projectData &&
               projectData.map((project, index) => (
-                <Col key={index} xs={12} className="project">
+                <Col key={index} xs={12} md={6} lg={4} className="project">
                   <AnimatedOnScroll
                     animationIn={
                       isOdd(index) === 0
@@ -60,7 +60,6 @@ export default function Project() {
                   >
                     <div className="project-content">
                       <p className="project-type main-titleColor">
-                        {" "}
                         {project.projectType}
                       </p>
                       <h3 className="project-title">
@@ -68,7 +67,7 @@ export default function Project() {
                           {project.title}
                         </strong>
                       </h3>
-                      <div className="project-description w-full md:w-6/12">
+                      <div className="project-description w-full">
                         <p className="main-textColor">{project.description}</p>
                       </div>
                       <ul className="project-tech-list">

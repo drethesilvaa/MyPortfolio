@@ -1,6 +1,6 @@
 import React from "react";
 import About from "./About";
-import Projects from "./Project";
+import Project from "./Project";
 import Footer from "./Footer";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { Container } from "react-bootstrap";
@@ -52,7 +52,7 @@ export default function Home() {
         <About></About>
       </Container>
       <Container>
-        <Projects></Projects>
+        <Project></Project>
       </Container>
       <Container>
         <Footer></Footer>
