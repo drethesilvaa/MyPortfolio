@@ -49,10 +49,10 @@ export default function Project() {
                     animationIn={
                       isOdd(index) === 0
                         ? isBigScreen
-                          ? "slideInDown"
+                          ? "fadeIn"
                           : "fadeIn"
                         : isBigScreen
-                        ? "slideInDown"
+                        ? "fadeIn"
                         : "fadeIn"
                     }
                     // animationOut={isOdd(index) === 0 ? "fadeOut" : "fadeOut"}
