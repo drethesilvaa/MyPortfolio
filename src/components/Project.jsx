@@ -4,6 +4,9 @@ import { Col, Row } from "react-bootstrap";
 import { SocialIcon } from "react-social-icons";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { useMediaQuery } from "react-responsive";
+import AsDialog from "./feedback/dialog.jsx";
+import ProjectGallery from "./projects/projectGallery.jsx";
+import CollectionsIcon from "@mui/icons-material/Collections";
 
 function isOdd(num) {
   return num % 2;
@@ -11,6 +14,21 @@ function isOdd(num) {
 
 export default function Project() {
   const [projectData, setProject] = useState(null);
+
+  const [dialogOpen, setdialogOpen] = useState(null);
+  const [dialogData, setdialogData] = useState(null);
+
+  const handleDialogOpen = (title) => {
+    setdialogOpen(true);
+
+    let data = projectData.filter((i) => i.title === title);
+    setdialogData(data[0]);
+  };
+
+  const handleDialogClose = () => {
+    setdialogOpen(false);
+  };
+
   const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
   const socialIconsStyle = { height: 45, width: 45 };
   useEffect(() => {
@@ -23,7 +41,8 @@ export default function Project() {
               date,
               projectType,
               "projectImage": image.asset->url,
-              Links      
+              Links,
+              gallery    
           }`
       )
       .then((data) => setProject(data))
@@ -86,6 +105,14 @@ export default function Project() {
                             style={socialIconsStyle}
                           ></SocialIcon>
                         ))}
+                        {project.gallery && (
+                          <span
+                            onClick={() => handleDialogOpen(project.title)}
+                            className="galleryOpen"
+                          >
+                            <CollectionsIcon></CollectionsIcon>
+                          </span>
+                        )}
                       </div>
                     </div>
                     <div
@@ -100,6 +127,17 @@ export default function Project() {
                 </Col>
               ))}
           </Row>
+          {dialogData && (
+            <AsDialog
+              open={dialogOpen}
+              close={handleDialogClose}
+              title={dialogData && dialogData.title}
+              actions={""}
+              topRight={""}
+            >
+              <ProjectGallery data={dialogData}></ProjectGallery>
+            </AsDialog>
+          )}
         </section>
       </section>
     </main>

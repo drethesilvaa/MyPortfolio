@@ -5,7 +5,11 @@
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.25",
     "@amcharts/amcharts5": "^5.1.14",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@fullpage/react-fullpage": "^0.1.23",
+    "@mui/icons-material": "^5.10.14",
+    "@mui/material": "^5.10.14",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.3.0",
     "@sanity/image-url": "^1.0.1",
@@ -22,6 +26,7 @@
     "react-bootstrap": "^2.3.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
+    "react-material-ui-carousel": "^3.4.2",
     "react-responsive": "^9.0.0-beta.8",
     "react-router-dom": "^6.3.0",
     "react-router-hash-link": "^2.4.3",
@@ -29,7 +34,7 @@
     "react-social-icons": "^5.13.0",
     "react-text-transition": "^3.0.2",
     "react-transition-group": "^4.4.2",
-    "styled-components": "^5.3.5",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

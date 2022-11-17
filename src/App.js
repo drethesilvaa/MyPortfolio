@@ -7,6 +7,11 @@ import NavBar from "./components/NavBar";
 import { useDarkMode } from "./components/useDarkMode";
 import Toggle from "./components/Toggler";
 import { ThemeProvider } from "styled-components";
+import {
+  ThemeProvider as MuiThemeProv,
+  createTheme,
+} from "@mui/material/styles";
+
 import { GlobalStyles } from "./components/GlobalStyles";
 import { lightTheme, darkTheme } from "./components/Themes";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -14,6 +19,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
+
+  const MUITHEME = createTheme({
+    palette: {
+      mode: theme,
+    },
+  });
 
   const browser = (
     <BrowserRouter>
@@ -31,27 +42,29 @@ function App() {
   if (!mountedComponent) return <div />;
 
   return (
-    <ThemeProvider theme={themeMode}>
-      <>
-        <GlobalStyles />
-        <div className="wrapper animated animatedFadeInUp fadeInUp ">
-          <div className={"line " + themeMode.emailLineBg}></div>
-          <div className="wordwrapper">
-            <div className="word">
-              <a
-                className={themeMode.emailTextClass}
-                href="mailto:andressilva03@gmail.com"
-              >
-                andressilva03@gmail.com
-              </a>
-              <Toggle theme={theme} toggleTheme={themeToggler} />
+    <MuiThemeProv theme={MUITHEME}>
+      <ThemeProvider theme={themeMode}>
+        <>
+          <GlobalStyles />
+          <div className="wrapper animated animatedFadeInUp fadeInUp ">
+            <div className={"line " + themeMode.emailLineBg}></div>
+            <div className="wordwrapper">
+              <div className="word">
+                <a
+                  className={themeMode.emailTextClass}
+                  href="mailto:andressilva03@gmail.com"
+                >
+                  andressilva03@gmail.com
+                </a>
+                <Toggle theme={theme} toggleTheme={themeToggler} />
+              </div>
             </div>
           </div>
-        </div>
 
-        {browser}
-      </>
-    </ThemeProvider>
+          {browser}
+        </>
+      </ThemeProvider>
+    </MuiThemeProv>
   );
 }
 

@@ -238,6 +238,15 @@ header{
     width: 100%;
     object-fit: contain;
   }
+
+  .galleryOpen{
+    padding: 13px 10.5px;
+    display: inline;
+    color: white;
+    background: #A7171A;
+    border-radius: 50%;
+    cursor:pointer;
+  }
   
   // .project:nth-child(even) .project-image {
   //   right: 0;
