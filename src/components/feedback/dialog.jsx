@@ -23,8 +23,7 @@ export default function AsDialog({
         open={open}
         onClose={close}
         fullWidth={true}
-        maxWidth="xl"
-        maxHeight="xl"
+        maxWidth="md"
       >
         <AppBar sx={{ position: "relative" }}>
           <Toolbar>

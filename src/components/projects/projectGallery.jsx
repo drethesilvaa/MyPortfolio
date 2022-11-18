@@ -14,7 +14,8 @@ export default function ProjectGallery({ data }) {
         indicators={false}
         animation="fade"
         interval={20000}
-        duration={1000}
+        duration={1000}  
+        index={1}   
       >
         {data
           ? data.gallery.images.map((element, i) => (
