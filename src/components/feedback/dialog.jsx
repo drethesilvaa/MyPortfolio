@@ -19,7 +19,13 @@ export default function AsDialog({
 }) {
   return (
     <>
-      <Dialog open={open} onClose={close} fullWidth={true} maxWidth="sm">
+      <Dialog
+        open={open}
+        onClose={close}
+        fullWidth={true}
+        maxWidth="xl"
+        maxHeight="xl"
+      >
         <AppBar sx={{ position: "relative" }}>
           <Toolbar>
             <IconButton

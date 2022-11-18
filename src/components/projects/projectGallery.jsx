@@ -17,9 +17,20 @@ export default function ProjectGallery({ data }) {
         duration={1000}
       >
         {data
-          ? data.gallery.images.map((element) => (
-              <Paper elevation={2}>
-                <img alt="" src={urlFor(element.asset._ref)} />
+          ? data.gallery.images.map((element, i) => (
+              <Paper elevation={2} key={i}>
+                <div className="text-center">
+                  <img alt="" src={urlFor(element.asset._ref)} />
+                  <p
+                    style={{
+                      marginTop: "10px",
+                      paddingBottom: "10px",
+                      textAlign: "center",
+                    }}
+                  >
+                    {element.cap}
+                  </p>
+                </div>
               </Paper>
             ))
           : "No Images for now"}
