@@ -95,7 +95,7 @@ export default function Project() {
                         </li>
                       </ul>
                       <div className="project-links mt-3">
-                        {project.Links.map((link, index) => (
+                        {project.Links?.map((link, index) => (
                           <SocialIcon
                             key={index}
                             url={link}
