@@ -34,7 +34,7 @@ export default function Project() {
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[_type == "project"]{
+        `*[_type == "project"] | order(date desc){
               title,
               description,
               Language_Frameworks,
@@ -58,6 +58,8 @@ export default function Project() {
             Work
           </h1>
         </AnimatedOnScroll>
+
+        {console.log(projectData)}
 
         <section className="">
           <Row className="">
