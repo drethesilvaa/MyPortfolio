@@ -15,7 +15,8 @@ export default function ProjectGallery({ data }) {
         animation="fade"
         interval={20000}
         duration={1000}  
-        index={1}   
+        index={0}  
+        navButtonsAlwaysInvisible={true} 
       >
         {data
           ? data.gallery.images.map((element, i) => (
