@@ -43,7 +43,7 @@ export default function Home() {
               color={theme.lightsaber}
             ></Lighsaber>
             <h1 className="text-6xl main-titleColor font-bold cursive leading-none home-name  m-0 pl-0 pb-10 lg:pl-10 lg:pb-0">
-              Hi, <br></br> I'm Andre, <br></br> UI/UX Front End Developer
+              Hi, <br></br> I'm Andre, <br></br> Front End Developer
             </h1>
           </AnimatedOnScroll>
         </section>
