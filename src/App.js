@@ -31,10 +31,10 @@ function App() {
       <NavBar></NavBar>
       <Routes>
         <Route exact="true" path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
+        {/* <Route path="/about" element={<About />}></Route>
         <Route path="/post/:slug" element={<SinglePost />}></Route>
         <Route path="/post" element={<Post />}></Route>
-        <Route path="/project" element={<Project />}></Route>
+        <Route path="/project" element={<Project />}></Route> */}
       </Routes>
     </BrowserRouter>
   );
