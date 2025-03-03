@@ -58,9 +58,7 @@ export default function Project() {
             Work
           </h1>
         </AnimatedOnScroll>
-
-        {console.log(projectData)}
-
+        
         <section className="">
           <Row className="">
             {projectData &&
