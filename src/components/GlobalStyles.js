@@ -112,7 +112,6 @@ header{
   }
   
   .home-name{
-    font-size: 5rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
   
@@ -121,7 +120,6 @@ header{
   
   @media screen and (max-width: 991px) {
     .home-name{
-      font-size: 3rem;
     }
     
   }

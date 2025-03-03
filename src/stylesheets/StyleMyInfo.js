@@ -28,8 +28,8 @@ export const StyleMyInfo = createGlobalStyle`
   justify-content: center;
   align-items: center;
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  // left: 50%;
+  // transform: translateX(-50%);
 }
 
 .card0 {

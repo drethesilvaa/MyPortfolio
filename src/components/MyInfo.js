@@ -6,7 +6,7 @@ import "../stylesheets/StyleMyInfo.js";
 import { MdAdsClick } from "react-icons/md";
 import { StyleMyInfo } from "../stylesheets/StyleMyInfo";
 
-export default function App(props) {
+export default function MyInfo(props) {
   const backgroundImage = {
     backgroundImage: "url(" + props.userImage + ")  ",
   };
@@ -19,7 +19,7 @@ export default function App(props) {
         {/* <h2>{props.userName}</h2> */}
         <div className="skills fa">
           <div className="skills-bar">
-            {props.userSkills.map((skill, index) => {
+            {props?.userSkills?.map((skill, index) => {
               return (
                 <div key={index} className="bar">
                   <div className="info">
@@ -34,39 +34,6 @@ export default function App(props) {
                 </div>
               );
             })}
-
-            {/* <div className="bar">
-              <div className="info">
-                <span>CSS</span>
-              </div>
-              <div className="progress-line">
-                <span className="css"></span>
-              </div>
-            </div>
-            <div className="bar">
-              <div className="info">
-                <span>BOOTSTRAP</span>
-              </div>
-              <div className="progress-line">
-                <span className="bootstrap"></span>
-              </div>
-            </div>
-            <div className="bar">
-              <div className="info">
-                <span>JAVASCRIPT</span>
-              </div>
-              <div className="progress-line">
-                <span className="javascript"></span>
-              </div>
-            </div>
-            <div className="bar">
-              <div className="info">
-                <span>C PROGRAMMING</span>
-              </div>
-              <div className="progress-line">
-                <span className="c"></span>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

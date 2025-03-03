@@ -4,58 +4,10 @@ import SanityBlockContent from "@sanity/block-content-to-react";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { Col, Row } from "react-bootstrap";
 import MyInfo from "./MyInfo.js";
+import { serializers } from "../data/sanitySerializers.js";
 
 export default function About() {
   const [author, setAuthor] = useState(null);
-
-  const serializers = {
-    types: {
-      block: (props) => {
-        const style = props.node.style || "normal";
-
-        if (/^h\d/.test(style)) {
-          const level = style.replace(/[^\d]/g, "");
-          return React.createElement(
-            `h${level}`,
-            { className: "text-lg" },
-            props.children
-          );
-        }
-
-        return style === "blockquote" ? (
-          <blockquote> –{props.children} </blockquote>
-        ) : (
-          <p> {props.children} </p>
-        );
-      },
-      code: (props) =>
-        "" || (
-          <pre data-language={props.node.language}>
-            <code> {props.node.code} </code>
-          </pre>
-        ),
-      youtube: (props) => <pre> {JSON.stringify(props, null, 2)} </pre>,
-    },
-    list: (props) =>
-      "" ||
-      (props.type === "bullet" ? (
-        <ul className="list-disc list-outside"> {props.children} </ul>
-      ) : (
-        <ol className="list-decimal list-outside"> {props.children} </ol>
-      )),
-    listItem: (props) =>
-      "" ||
-      (props.type === "bullet" ? (
-        <li> {props.children} </li>
-      ) : (
-        <li> {props.children} </li>
-      )),
-    marks: {
-      strong: (props) => "" || <strong> {props.children} </strong>,
-      em: (props) => "" || <em> {props.children} </em>,
-      code: (props) => "" || <code> {props.children} </code>,
-    },
-  };
 
   const styleBioTitle = {
     position: "relative",
@@ -83,7 +35,7 @@ export default function About() {
     <main className="relative aboutsection pb-72" id="aboutme">
       <span> </span>
       <Row>
-        <Col xs={12} lg={6}>
+        <Col xs={12} >
           <AnimatedOnScroll animationIn="fadeInDown">
             <h1
               className="cursive text-8xl text-left main-titleColor mb-11"
@@ -111,16 +63,12 @@ export default function About() {
             </AnimatedOnScroll>
           </section>
         </Col>
-        <Col xs={12} lg={6}>
+        <Col xs={12} >
           <AnimatedOnScroll
             animationIn="fadeIn"
             className="relative lg:top-1/4"
           >
-            <MyInfo
-              userName={author.name}
-              userImage={author.authorImage}
-              userSkills={author.Skills}
-            ></MyInfo>
+           
           </AnimatedOnScroll>
         </Col>
       </Row>
