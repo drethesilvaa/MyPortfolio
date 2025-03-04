@@ -1,8 +1,4 @@
 import Home from "./components/Home";
-import About from "./components/About";
-import SinglePost from "./components/SinglePost";
-import Post from "./components/Post";
-import Project from "./components/Project";
 import NavBar from "./components/NavBar";
 import { useDarkMode } from "./components/useDarkMode";
 import Toggle from "./components/Toggler";

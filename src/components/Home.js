@@ -5,13 +5,9 @@ import sanityClient from "../client.js";
 import Footer from "./Footer";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { Container } from "react-bootstrap";
-import Lighsaber from "./Lighsaber";
-import { useMediaQuery } from "react-responsive";
-import { useTheme } from "styled-components";
 import MyInfo from "./MyInfo";
 
 export default function Home() {
-  const theme = useTheme();
   const [author, setAuthor] = useState(null);
 
   useEffect(() => {
@@ -29,8 +25,6 @@ export default function Home() {
       .then((data) => setAuthor(data[0]))
       .catch();
   }, []);
-
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 991px)" });
 
   return (
     <main>

@@ -3,7 +3,6 @@ import sanityClient from "../client.js";
 import SanityBlockContent from "@sanity/block-content-to-react";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { Col, Row } from "react-bootstrap";
-import MyInfo from "./MyInfo.js";
 import { serializers } from "../data/sanitySerializers.js";
 
 export default function About() {

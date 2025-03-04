@@ -7,10 +7,9 @@ import { useMediaQuery } from "react-responsive";
 import AsDialog from "./feedback/dialog.jsx";
 import ProjectGallery from "./projects/projectGallery.jsx";
 import CollectionsIcon from "@mui/icons-material/Collections";
+import { SwiperSlide } from "swiper/react";
+import { Carousel } from "./carousel/Carousel.js";
 
-function isOdd(num) {
-  return num % 2;
-}
 
 export default function Project() {
   const [projectData, setProject] = useState(null);
@@ -58,25 +57,13 @@ export default function Project() {
             Work
           </h1>
         </AnimatedOnScroll>
-        
+
         <section className="">
-          <Row className="">
+          <Carousel>
             {projectData &&
               projectData.map((project, index) => (
-                <Col key={index} xs={12} md={6} lg={4} className="project">
-                  <AnimatedOnScroll
-                    animationIn={
-                      isOdd(index) === 0
-                        ? isBigScreen
-                          ? "fadeIn"
-                          : "fadeIn"
-                        : isBigScreen
-                        ? "fadeIn"
-                        : "fadeIn"
-                    }
-                    // animationOut={isOdd(index) === 0 ? "fadeOut" : "fadeOut"}
-                    className="relative"
-                  >
+                <SwiperSlide key={index} className="w-80 h-80">
+                  <div className="project-content">
                     <div className="project-content">
                       <p className="project-type main-titleColor">
                         {project.projectType}
@@ -123,10 +110,10 @@ export default function Project() {
                     >
                       <img src={project.projectImage} alt={project.title}></img>
                     </div>
-                  </AnimatedOnScroll>
-                </Col>
+                  </div>
+                </SwiperSlide>
               ))}
-          </Row>
+          </Carousel>
           {dialogData && (
             <AsDialog
               open={dialogOpen}
