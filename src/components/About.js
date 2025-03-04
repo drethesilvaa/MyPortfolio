@@ -38,7 +38,7 @@ export default function About() {
         <Col xs={12} >
           <AnimatedOnScroll animationIn="fadeInDown">
             <h1
-              className="cursive text-8xl text-left main-titleColor mb-11"
+              className="cursive text-8xl text-left main-titleColor mb-11 mt-11 md:mt-0"
               style={styleBioTitle}
             >
               About Me

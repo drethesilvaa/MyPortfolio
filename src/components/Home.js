@@ -49,7 +49,7 @@ export default function Home() {
             animationInDelay={1000}
             style={{ top: "10%", position: "relative" }}
           >
-            <div className="flex gap-4 justify-between">
+            <div className="flex flex-col md:flex-row items-center gap-4 justify-between">
               <div className="flex items-center">
                 <h1 className="text-6xl main-titleColor font-bold cursive leading-none home-name  m-0 pl-0 pb-10 lg:pb-0">
                   Hi, <br></br> I'm Andre, <br></br> Welcome to my Page!
