@@ -11,6 +11,7 @@ import {
 import { GlobalStyles } from "./components/GlobalStyles";
 import { lightTheme, darkTheme } from "./components/Themes";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SanityDataProvider } from "./context/SanityDataContext";
 
 function App() {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -35,32 +36,34 @@ function App() {
     </BrowserRouter>
   );
 
-  if (!mountedComponent) return <div />;
+  if (!mountedComponent) return <div></div>;
 
   return (
-    <MuiThemeProv theme={MUITHEME}>
-      <ThemeProvider theme={themeMode}>
-        <>
-          <GlobalStyles />
-          <div className="wrapper animated animatedFadeInUp fadeInUp ">
-            <div className={"line " + themeMode.emailLineBg}></div>
-            <div className="wordwrapper">
-              <div className="word">
-                <a
-                  className={themeMode.emailTextClass}
-                  href="mailto:andressilva03@gmail.com"
-                >
-                  andressilva03@gmail.com
-                </a>
-                <Toggle theme={theme} toggleTheme={themeToggler} />
+    <SanityDataProvider >
+      <MuiThemeProv theme={MUITHEME}>
+        <ThemeProvider theme={themeMode}>
+          <>
+            <GlobalStyles />
+            <div className="wrapper animated animatedFadeInUp fadeInUp ">
+              <div className={"line " + themeMode.emailLineBg}></div>
+              <div className="wordwrapper">
+                <div className="word">
+                  <a
+                    className={themeMode.emailTextClass}
+                    href="mailto:andressilva03@gmail.com"
+                  >
+                    andressilva03@gmail.com
+                  </a>
+                  <Toggle theme={theme} toggleTheme={themeToggler} />
+                </div>
               </div>
             </div>
-          </div>
 
-          {browser}
-        </>
-      </ThemeProvider>
-    </MuiThemeProv>
+            {browser}
+          </>
+        </ThemeProvider>
+      </MuiThemeProv>
+    </SanityDataProvider>
   );
 }
 

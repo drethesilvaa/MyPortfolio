@@ -172,9 +172,9 @@ header{
   
   
   
-  .project-content{
-    padding: 40px;
-  }
+  // .project-content{
+  //   padding: 40px;
+  // }
   
   .project-tech-list{
       list-style-type: none;
@@ -197,6 +197,7 @@ header{
   .project-image {
     position: absolute;
     top: 0;
+    left:0;
     width: 100%;
     opacity: 0.12;
     height: 100%;

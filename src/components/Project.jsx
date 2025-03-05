@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import sanityClient from "../client.js";
-import { Col, Row } from "react-bootstrap";
+import React, { useState } from "react";
 import { SocialIcon } from "react-social-icons";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
-import { useMediaQuery } from "react-responsive";
 import AsDialog from "./feedback/dialog.jsx";
 import ProjectGallery from "./projects/projectGallery.jsx";
 import CollectionsIcon from "@mui/icons-material/Collections";
 import { SwiperSlide } from "swiper/react";
 import { Carousel } from "./carousel/Carousel.js";
-
+import { useSanityData } from "../context/SanityDataContext.js";
+import ImageWithSkeleton from "./ui/images/ImageWithSkeleton.js";
 
 export default function Project() {
-  const [projectData, setProject] = useState(null);
+  const {
+    projects,
+  } = useSanityData();
 
   const [dialogOpen, setdialogOpen] = useState(null);
   const [dialogData, setdialogData] = useState(null);
@@ -20,7 +20,7 @@ export default function Project() {
   const handleDialogOpen = (title) => {
     setdialogOpen(true);
 
-    let data = projectData.filter((i) => i.title === title);
+    let data = projects.filter((i) => i.title === title);
     setdialogData(data[0]);
   };
 
@@ -28,25 +28,7 @@ export default function Project() {
     setdialogOpen(false);
   };
 
-  const isBigScreen = useMediaQuery({ query: "(min-width: 768px)" });
   const socialIconsStyle = { height: 45, width: 45 };
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "project"] | order(date desc){
-              title,
-              description,
-              Language_Frameworks,
-              date,
-              projectType,
-              "projectImage": image.asset->url,
-              Links,
-              gallery    
-          }`
-      )
-      .then((data) => setProject(data))
-      .catch(console.error);
-  }, []);
 
   return (
     <main className="" id="mywork">
@@ -60,47 +42,45 @@ export default function Project() {
 
         <section className="">
           <Carousel>
-            {projectData &&
-              projectData.map((project, index) => (
-                <SwiperSlide key={index} className="w-80 h-80">
-                  <div className="project-content">
-                    <div className="project-content">
-                      <p className="project-type main-titleColor">
-                        {project.projectType}
-                      </p>
-                      <h3 className="project-title">
-                        <strong className="main-textColor">
-                          {project.title}
-                        </strong>
-                      </h3>
-                      <div className="project-description w-full">
-                        <p className="main-textColor">{project.description}</p>
-                      </div>
-                      <ul className="project-tech-list">
-                        <li className="main-textColor">
-                          {project.Language_Frameworks}
-                        </li>
-                      </ul>
-                      <div className="project-links mt-3">
-                        {project.Links?.map((link, index) => (
-                          <SocialIcon
-                            key={index}
-                            url={link}
-                            className="mr-4"
-                            target={"_blank"}
-                            fgColor="#fff"
-                            style={socialIconsStyle}
-                          ></SocialIcon>
-                        ))}
-                        {project.gallery && (
-                          <span
-                            onClick={() => handleDialogOpen(project.title)}
-                            className="galleryOpen"
-                          >
-                            <CollectionsIcon></CollectionsIcon>
-                          </span>
-                        )}
-                      </div>
+            {projects &&
+              projects.map((project, index) => (
+                <SwiperSlide key={index} className="h-auto">
+                  <div className="p-4 h-full">
+                    <p className="project-type main-titleColor">
+                      {project.projectType}
+                    </p>
+                    <h3 className="project-title">
+                      <strong className="main-textColor">
+                        {project.title}
+                      </strong>
+                    </h3>
+                    <div className="project-description w-full">
+                      <p className="main-textColor">{project.description}</p>
+                    </div>
+                    <ul className="project-tech-list">
+                      <li className="main-textColor">
+                        {project.Language_Frameworks}
+                      </li>
+                    </ul>
+                    <div className="project-links mt-3">
+                      {project.Links?.map((link, index) => (
+                        <SocialIcon
+                          key={index}
+                          url={link}
+                          className="mr-4"
+                          target={"_blank"}
+                          fgColor="#fff"
+                          style={socialIconsStyle}
+                        ></SocialIcon>
+                      ))}
+                      {project.gallery && (
+                        <div
+                          onClick={() => handleDialogOpen(project.title)}
+                          className="galleryOpen"
+                        >
+                          <CollectionsIcon></CollectionsIcon>
+                        </div>
+                      )}
                     </div>
                     <div
                       className="project-image"
@@ -108,7 +88,10 @@ export default function Project() {
                         backgroundImage: "url(" + project.projectImage + ")",
                       }}
                     >
-                      <img src={project.projectImage} alt={project.title}></img>
+                      <ImageWithSkeleton
+                        src={project.projectImage}
+                        alt={project.title}
+                      />
                     </div>
                   </div>
                 </SwiperSlide>

@@ -9,7 +9,7 @@ export const serializers = {
                 const level = style.replace(/[^\d]/g, "");
                 return React.createElement(
                     `h${level}`,
-                    { className: "" },
+                    { className: "text-4xl mt-4" },
                     props.children
                 );
             }

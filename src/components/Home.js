@@ -1,30 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import About from "./About";
 import Project from "./Project";
-import sanityClient from "../client.js";
 import Footer from "./Footer";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { Container } from "react-bootstrap";
 import MyInfo from "./MyInfo";
+import Loader from "../layouts/Loader.js";
+import { useSanityData } from "../context/SanityDataContext.js";
 
 export default function Home() {
-  const [author, setAuthor] = useState(null);
 
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "author"]{
-            name,
-            "authorImage": image.asset->url,
-             "Skills": *[_type=='skills']{ 
-              skill,
-              skill_Level
-            },
-        }`
-      )
-      .then((data) => setAuthor(data[0]))
-      .catch();
-  }, []);
+  const {
+    author,
+    projects
+  } = useSanityData();
+
+
+  if (!author || !projects) return <Loader />
 
   return (
     <main>

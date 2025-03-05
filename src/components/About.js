@@ -1,34 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import sanityClient from "../client.js";
 import SanityBlockContent from "@sanity/block-content-to-react";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { Col, Row } from "react-bootstrap";
 import { serializers } from "../data/sanitySerializers.js";
+import { useSanityData } from "../context/SanityDataContext.js";
 
 export default function About() {
-  const [author, setAuthor] = useState(null);
+
+  const {
+    author
+  } = useSanityData();
 
   const styleBioTitle = {
     position: "relative",
   };
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "author"]{
-            name,
-            bio,
-            "authorImage": image.asset->url,
-            "Skills": *[_type=='skills']{ 
-              skill,
-              skill_Level
-            },
-        }`
-      )
-      .then((data) => setAuthor(data[0]))
-      .catch();
-  }, []);
-
-  if (!author) return <div> Loading... </div>;
 
   return (
     <main className="relative aboutsection pb-72" id="aboutme">
@@ -67,7 +53,7 @@ export default function About() {
             animationIn="fadeIn"
             className="relative lg:top-1/4"
           >
-           
+
           </AnimatedOnScroll>
         </Col>
       </Row>
