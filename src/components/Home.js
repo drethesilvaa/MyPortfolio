@@ -54,10 +54,10 @@ export default function Home() {
         </section>
       </Container>
       <Container>
-        <About></About>
+        <Project></Project>
       </Container>
       <Container>
-        <Project></Project>
+        <About></About>
       </Container>
       <Container>
         <Footer></Footer>

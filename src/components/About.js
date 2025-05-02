@@ -7,20 +7,17 @@ import { serializers } from "../data/sanitySerializers.js";
 import { useSanityData } from "../context/SanityDataContext.js";
 
 export default function About() {
-
-  const {
-    author
-  } = useSanityData();
+  const { author } = useSanityData();
 
   const styleBioTitle = {
     position: "relative",
   };
 
   return (
-    <main className="relative aboutsection pb-72" id="aboutme">
+    <main className="relative aboutsection pt-72" id="aboutme">
       <span> </span>
       <Row>
-        <Col xs={12} >
+        <Col xs={12}>
           <AnimatedOnScroll animationIn="fadeInDown">
             <h1
               className="cursive text-8xl text-left main-titleColor mb-11 mt-11 md:mt-0"
@@ -48,13 +45,11 @@ export default function About() {
             </AnimatedOnScroll>
           </section>
         </Col>
-        <Col xs={12} >
+        <Col xs={12}>
           <AnimatedOnScroll
             animationIn="fadeIn"
             className="relative lg:top-1/4"
-          >
-
-          </AnimatedOnScroll>
+          ></AnimatedOnScroll>
         </Col>
       </Row>
     </main>
