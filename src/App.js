@@ -12,6 +12,7 @@ import { GlobalStyles } from "./components/GlobalStyles";
 import { lightTheme, darkTheme } from "./components/Themes";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SanityDataProvider } from "./context/SanityDataContext";
+import { Container } from "react-bootstrap";
 
 function App() {
   const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -25,21 +26,23 @@ function App() {
 
   const browser = (
     <BrowserRouter>
-      <NavBar></NavBar>
-      <Routes>
-        <Route exact="true" path="/" element={<Home />}></Route>
-        {/* <Route path="/about" element={<About />}></Route>
+      <Container className="bg-opacWhite rounded-md my-20">
+        <NavBar></NavBar>
+        <Routes>
+          <Route exact="true" path="/" element={<Home />}></Route>
+          {/* <Route path="/about" element={<About />}></Route>
         <Route path="/post/:slug" element={<SinglePost />}></Route>
         <Route path="/post" element={<Post />}></Route>
         <Route path="/project" element={<Project />}></Route> */}
-      </Routes>
+        </Routes>
+      </Container>
     </BrowserRouter>
   );
 
   if (!mountedComponent) return <div></div>;
 
   return (
-    <SanityDataProvider >
+    <SanityDataProvider>
       <MuiThemeProv theme={MUITHEME}>
         <ThemeProvider theme={themeMode}>
           <>
@@ -54,7 +57,7 @@ function App() {
                   >
                     andressilva03@gmail.com
                   </a>
-                  <Toggle theme={theme} toggleTheme={themeToggler} />
+                  {/* <Toggle theme={theme} toggleTheme={themeToggler} /> */}
                 </div>
               </div>
             </div>

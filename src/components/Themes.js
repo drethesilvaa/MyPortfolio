@@ -20,11 +20,10 @@ export const lightTheme = {
 };
 export const darkTheme = {
   name: "dark",
-  body: "#1d1d1d;",
   footer_bg: "red",
-  text: "#FAFAFA",
+  text: "black",
   lightsaber: "yoda",
-  mainTitleColor: "#D1FAE5",
+  mainTitleColor: "#14213d",
   mainTextColor: "white",
   mainLinkColor: "#D1FAE5",
   mainLinkHover: "rgb(21 255 134)",
@@ -32,7 +31,7 @@ export const darkTheme = {
   emailTextClass: "text-green-100 hover:text-green-200 ",
   emailLineBg: "bg-green-100",
   projectDescriptionBg: "#4d4d83",
-  classForNav: "hover:text-white",
+  classForNav: "",
   hamburguerMenuIconColor: "rgba(209, 250, 229, var(--tw-text-opacity))",
   menuBg: "#2c2c2c",
   themeIcon: "#D1FAE5",

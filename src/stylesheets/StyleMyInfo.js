@@ -19,7 +19,7 @@ export const StyleMyInfo = createGlobalStyle`
   height: 435px;
   width: 400px;
   background: #808080;
-  border-radius: 64% 36% 33% 67% / 44% 50% 50% 56%;
+  // border-radius: 64% 36% 33% 67% / 44% 50% 50% 56%;
   transition: background 0.8s;
   overflow: hidden;
   background: #000;

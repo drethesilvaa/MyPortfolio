@@ -23,7 +23,7 @@ export default function _Footer() {
   return (
     <AnimatedOnScroll animationIn="fadeIn">
       <footer className="pt-72 pb-4 text-center main-textColor">
-        <div className="inline lg:hidden">
+        {/* <div className="inline lg:hidden">
           <button
             className="dark_dayIcon"
             id="switchTheme"
@@ -35,7 +35,7 @@ export default function _Footer() {
               <RiSunLine></RiSunLine>
             )}
           </button>
-        </div>
+        </div> */}
 
         <h4>Designed & Built by Andre Silva</h4>
         <a

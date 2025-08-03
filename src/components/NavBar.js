@@ -27,8 +27,7 @@ export default function NavBar() {
   }, [toggle]);
 
   const stylenav =
-    "inline-flex items-center lg:py-3 px-3 lg:my-6 rounded main-titleColor tracking-wide text-2xl nav-link-animation " +
-    theme.classForNav;
+    "inline-flex items-center rounded main-titleColor tracking-wide text-xl nav-link-animation ";
 
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 991px)" });
   const isBigScreen = useMediaQuery({ query: "(min-width: 992px)" });
@@ -46,13 +45,12 @@ export default function NavBar() {
         expanded={toggle}
         onToggle={setToggler}
       >
-        <Container>
-          <AnimatedOnScroll
-            animationIn="fadeIn"
-            animationInDelay={500}
-            screenOffset={0}
-          >
-            {/* <div className="inline lg:hidden">
+        <AnimatedOnScroll
+          animationIn="fadeIn"
+          animationInDelay={500}
+          screenOffset={0}
+        >
+          {/* <div className="inline lg:hidden">
               <button
                 className="dark_dayIcon"
                 id="switchTheme"
@@ -65,39 +63,66 @@ export default function NavBar() {
                 )}
               </button>
             </div> */}
-            <Navbar.Brand href="#home">
-              <Link
-                to="/"
-                exact="true"
-                className={
-                  "inline-flex items-center py-6 px-3 mr-4 main-titleColor text-4xl font-bold cursive tracking-widest " +
-                  theme.classForNav
-                }
-              >
-                Andre Silva
-              </Link>
-            </Navbar.Brand>
-          </AnimatedOnScroll>
+          <Navbar.Brand href="#home">
+            <Link
+              to="/"
+              exact="true"
+              className={
+                "inline-flex items-center  main-titleColor text-xl cursive " +
+                theme.classForNav
+              }
+            >
+              Andre Silva
+            </Link>
+          </Navbar.Brand>
+        </AnimatedOnScroll>
 
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto text-center lg:text-left">
-              {isTabletOrMobile && (
-                <React.Fragment>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto text-center lg:text-left">
+            {isTabletOrMobile && (
+              <React.Fragment>
+                <Nav.Link>
+                  <Link
+                    to="/#mywork"
+                    onClick={() => setToggler((prevtoggle) => !prevtoggle)}
+                    className={stylenav}
+                    scroll={(el) => scrollWithOffset(el)}
+                  >
+                    Work
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link
+                    to="/#aboutme"
+                    onClick={() => setToggler((prevtoggle) => !prevtoggle)}
+                    smooth
+                    className={stylenav}
+                    scroll={(el) => scrollWithOffset(el)}
+                  >
+                    About Me
+                  </Link>
+                </Nav.Link>
+              </React.Fragment>
+            )}
+            {isBigScreen && (
+              <React.Fragment>
+                <AnimatedOnScroll animationIn="fadeIn" animationInDelay={1000}>
                   <Nav.Link>
                     <Link
                       to="/#mywork"
-                      onClick={() => setToggler((prevtoggle) => !prevtoggle)}
+                      smooth
                       className={stylenav}
                       scroll={(el) => scrollWithOffset(el)}
                     >
                       Work
                     </Link>
                   </Nav.Link>
+                </AnimatedOnScroll>
+                <AnimatedOnScroll animationIn="fadeIn" animationInDelay={1250}>
                   <Nav.Link>
                     <Link
                       to="/#aboutme"
-                      onClick={() => setToggler((prevtoggle) => !prevtoggle)}
                       smooth
                       className={stylenav}
                       scroll={(el) => scrollWithOffset(el)}
@@ -105,73 +130,11 @@ export default function NavBar() {
                       About Me
                     </Link>
                   </Nav.Link>
-                </React.Fragment>
-              )}
-              {isBigScreen && (
-                <React.Fragment>
-                  <AnimatedOnScroll
-                    animationIn="fadeIn"
-                    animationInDelay={1000}
-                  >
-                    <Nav.Link>
-                      <Link
-                        to="/#mywork"
-                        smooth
-                        className={stylenav}
-                        scroll={(el) => scrollWithOffset(el)}
-                      >
-                        Work
-                      </Link>
-                    </Nav.Link>
-                  </AnimatedOnScroll>
-                  <AnimatedOnScroll
-                    animationIn="fadeIn"
-                    animationInDelay={1250}
-                  >
-                    <Nav.Link>
-                      <Link
-                        to="/#aboutme"
-                        smooth
-                        className={stylenav}
-                        scroll={(el) => scrollWithOffset(el)}
-                      >
-                        About Me
-                      </Link>
-                    </Nav.Link>
-                  </AnimatedOnScroll>
-                  <AnimatedOnScroll
-                    animationIn="fadeIn"
-                    animationInDelay={1500}
-                  >
-                    <div className="inline lg:inline-flex py-3 px-3 lg:my-6 ">
-                      <SocialIcon
-                        url="https://github.com/drethesilvaa"
-                        className="mr-4 nav-link-animation "
-                        target={"_blank"}
-                        fgColor="#fff"
-                        style={socialIconsStyle}
-                      ></SocialIcon>
-                      <SocialIcon
-                        url="https://www.linkedin.com/in/andréssilva/"
-                        className="mr-4 nav-link-animation"
-                        target={"_blank"}
-                        fgColor="#fff"
-                        style={socialIconsStyle}
-                      ></SocialIcon>
-                      <SocialIcon
-                        url="https://www.instagram.com/drethegallery/"
-                        className="mr-4 nav-link-animation"
-                        target={"_blank"}
-                        fgColor="#fff"
-                        style={socialIconsStyle}
-                      ></SocialIcon>
-                    </div>
-                  </AnimatedOnScroll>
-                </React.Fragment>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
+                </AnimatedOnScroll>
+              </React.Fragment>
+            )}
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
     </header>
   );

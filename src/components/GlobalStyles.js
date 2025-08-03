@@ -13,7 +13,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   
 header{
-    font-family: 'Square Peg', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
   }
 
@@ -28,7 +28,7 @@ header{
   
   .cursive{
     font-weight: 700;
-    font-family: 'Square Peg', cursive;
+    font-family: 'Montserrat', sans-serif;
   }
   
   .prose img{
