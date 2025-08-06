@@ -11,6 +11,7 @@ import { GlobalStyles } from "./components/GlobalStyles";
 import { lightTheme, darkTheme } from "./components/Themes";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SanityDataProvider } from "./context/SanityDataContext";
+import SmoothScrollWrapper from "./components/SmoothScrollWrapper";
 
 function App() {
   const [theme, mountedComponent] = useDarkMode();
@@ -23,18 +24,20 @@ function App() {
   });
 
   const browser = (
-    <BrowserRouter>
-      <div className="bg-opacWhite rounded-xl my-20  mx-auto w-[90%] xl:w-[60%] px-4">
-        <NavBar></NavBar>
-        <Routes>
-          <Route exact="true" path="/" element={<Home />}></Route>
-          {/* <Route path="/about" element={<About />}></Route>
+    <SmoothScrollWrapper>
+      <BrowserRouter>
+        <div className="bg-opacWhite rounded-xl my-20  mx-auto w-[90%] xl:w-[60%] px-4">
+          <NavBar></NavBar>
+          <Routes>
+            <Route exact="true" path="/" element={<Home />}></Route>
+            {/* <Route path="/about" element={<About />}></Route>
         <Route path="/post/:slug" element={<SinglePost />}></Route>
         <Route path="/post" element={<Post />}></Route>
         <Route path="/project" element={<Project />}></Route> */}
-        </Routes>
-      </div>
-    </BrowserRouter>
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </SmoothScrollWrapper>
   );
 
   if (!mountedComponent) return <div></div>;
@@ -43,9 +46,8 @@ function App() {
     <SanityDataProvider>
       <MuiThemeProv theme={MUITHEME}>
         <ThemeProvider theme={themeMode}>
-          <>
-            <GlobalStyles />
-            {/* <div className="wrapper animated animatedFadeInUp fadeInUp ">
+          <GlobalStyles />
+          {/* <div className="wrapper animated animatedFadeInUp fadeInUp ">
               <div className={"line " + themeMode.emailLineBg}></div>
               <div className="wordwrapper">
                 <div className="word">
@@ -60,8 +62,7 @@ function App() {
               </div>
             </div> */}
 
-            {browser}
-          </>
+          {browser}
         </ThemeProvider>
       </MuiThemeProv>
     </SanityDataProvider>

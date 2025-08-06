@@ -1,16 +1,13 @@
-import { AnimatedOnScroll } from "react-animated-css-onscroll";
 // import styled from "styled-components";
 
 export default function _Footer() {
-
   // const Footer = styled.footer`
   // background: ${({ theme }) => theme.footer_bg};
   // }`;
 
   return (
-    <AnimatedOnScroll animationIn="fadeIn">
-      <footer className="pt-10 pb-10 text-center main-textColor">
-        {/* <div className="inline lg:hidden">
+    <footer className="pt-10 pb-10 main-textColor">
+      {/* <div className="inline lg:hidden">
           <button
             className="dark_dayIcon"
             id="switchTheme"
@@ -24,8 +21,8 @@ export default function _Footer() {
           </button>
         </div> */}
 
-        <h4>Designed & Built by Andre Silva</h4>
-        {/* <a
+      <h4>Designed & Built by Andre Silva</h4>
+      {/* <a
           className="block pb-3 lg:hidden "
           href="mailto:andressilva03@gmail.com"
         >
@@ -54,7 +51,6 @@ export default function _Footer() {
             style={socialIconsStyle}
           ></SocialIcon>
         </div> */}
-      </footer>
-    </AnimatedOnScroll>
+    </footer>
   );
 }

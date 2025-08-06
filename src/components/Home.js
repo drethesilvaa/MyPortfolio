@@ -5,7 +5,7 @@ import Loader from "../layouts/Loader.js";
 import { useSanityData } from "../context/SanityDataContext.js";
 import { RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
 import { motion } from "motion/react";
-
+import idfLogo from "../assets/idfLogo.png";
 export default function Home() {
   const { author, projects } = useSanityData();
 
@@ -19,7 +19,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="lg:col-span-1 order-1 lg:order-2 flex items-center rounded-xl overflow-hidden"
+            className="lg:col-span-1 order-1 lg:order-2 flex items-center rounded-xl overflow-hidden h-full"
           >
             <MyInfo
               userName={author?.name}
@@ -30,7 +30,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8,delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="grid content-between gap-4  lg:col-span-2 order-2 lg:order-1 bg-japan-hero bg-cover bg-center rounded-xl h-full px-8 py-8"
           >
             <div className="grid gap-4">
@@ -43,31 +43,39 @@ export default function Home() {
                 inclusive interfaces that solve real problems and delight users.
               </p>
             </div>
-            <div className="flex items-center gap-4">
-              <a
-                href="mailto:andrethessilva@gmail.com"
-                className="py-3 px-6 bg-[#131417] text-white hover:text-white rounded-full hover:bg-[#131417]/85 active:scale-95 transition-all"
-              >
-                Contact Me
-              </a>
+            <div className="flex justify-between items-center gap-4">
+              <div className="flex flex-wrap items-center gap-4">
+                <a
+                  href="mailto:andrethessilva@gmail.com"
+                  className="py-3 px-6 bg-[#131417] text-white hover:text-white rounded-full hover:bg-[#131417]/85 active:scale-95 transition-all"
+                >
+                  Contact Me
+                </a>
 
-              <a
-                href="https://www.linkedin.com/in/andréssilva"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white/95 text-[#131417] rounded-full hover:bg-[#131417]/20 active:scale-95 transition-all "
-              >
-                <RiLinkedinFill size={20} />
-              </a>
+                <a
+                  href="https://www.linkedin.com/in/andréssilva"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white/95 text-[#131417] rounded-full hover:bg-[#131417]/20 active:scale-95 transition-all "
+                >
+                  <RiLinkedinFill size={20} />
+                </a>
 
-              <a
-                href="https://www.instagram.com/itswithandre"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white/95 text-[#131417] rounded-full hover:bg-[#131417]/20 active:scale-95 transition-all "
-              >
-                <RiInstagramFill size={20} />
-              </a>
+                <a
+                  href="https://www.instagram.com/itswithandre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-white/95 text-[#131417] rounded-full hover:bg-[#131417]/20 active:scale-95 transition-all "
+                >
+                  <RiInstagramFill size={20} />
+                </a>
+              </div>
+              <div className="grid justify-items-center items-center gap-4">
+                <img src={idfLogo} alt="idf logo" className="w-16 h-16" />
+                <p className="text-center text-xs font-semibold uppercase">
+                  IDF Certified <br /> Professional <br /> UI/UX Designer
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>

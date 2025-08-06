@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { HashLink as Link } from "react-router-hash-link";
+import { useState, useEffect } from "react";
 import { Navbar } from "react-bootstrap";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { useTheme } from "styled-components";
@@ -52,20 +51,15 @@ export default function NavBar() {
                 )}
               </button>
             </div> */}
-          <Navbar.Brand href="#home">
-            <Link
-              to="/"
-              exact="true"
-              className={
-                "inline-flex items-center  main-titleColor text-lg font-medium " +
-                theme.classForNav
-              }
-            >
-              Andre Silva
-            </Link>
-          </Navbar.Brand>
+          <p
+            className={
+              "inline-flex items-center  main-titleColor text-lg font-medium " +
+              theme.classForNav
+            }
+          >
+            Andre Silva
+          </p>
         </AnimatedOnScroll>
-
         {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
         {/* <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto text-center lg:text-left">
