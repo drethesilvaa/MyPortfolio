@@ -6,7 +6,6 @@ export const StyleMyInfo = createGlobalStyle`
   width: 391px;
   background: transparent;
   border-radius: 10px;
-  transition: border 1s;
   position: relative;
   border: 0 !important;
 }
@@ -17,10 +16,9 @@ export const StyleMyInfo = createGlobalStyle`
 
 .card {
   height: 435px;
-  width: 400px;
+  width: 100%;
   background: #808080;
   // border-radius: 64% 36% 33% 67% / 44% 50% 50% 56%;
-  transition: background 0.8s;
   overflow: hidden;
   background: #000;
   box-shadow: 0 70px 63px -60px #000;
@@ -28,40 +26,41 @@ export const StyleMyInfo = createGlobalStyle`
   justify-content: center;
   align-items: center;
   position: relative;
+  scale:1.2;
   // left: 50%;
   // transform: translateX(-50%);
 }
 
 .card0 {
-  background-size: 435px;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.card0:hover::before{
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-color: rgba(0,0,0,0.25);
-}
+// .card0:hover::before{
+//   content: "";
+//   position: absolute;
+//   top: 0px;
+//   right: 0px;
+//   bottom: 0px;
+//   left: 0px;
+//   background-color: rgba(0,0,0,0.25);
+// }
 
-.card0:hover {
-  background-size: 600px;
-  background-position: left;
-}
+// .card0:hover {
+//   background-size: 600px;
+//   background-position: left;
+// }
 
 
 
-.card0:hover h2 {
-  opacity: 1;
-}
+// .card0:hover h2 {
+//   opacity: 1;
+// }
 
-.card0:hover .fa {
-  opacity: 1;
-}
+// .card0:hover .fa {
+//   opacity: 1;
+// }
 
 .skills-bar .bar .progress-line {
   animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
@@ -190,13 +189,6 @@ h2 {
 }
 
 @media only screen and (max-width: 600px) {
-  .card0 {
-    background-size: 320px;
-  }
-  .card {
-    height: 400px;
-    width: 320px;
-  }
   .border {
     height: 394px;
     width: 310px;

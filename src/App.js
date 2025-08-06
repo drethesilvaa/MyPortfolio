@@ -1,7 +1,6 @@
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import { useDarkMode } from "./components/useDarkMode";
-import Toggle from "./components/Toggler";
 import { ThemeProvider } from "styled-components";
 import {
   ThemeProvider as MuiThemeProv,
@@ -12,10 +11,9 @@ import { GlobalStyles } from "./components/GlobalStyles";
 import { lightTheme, darkTheme } from "./components/Themes";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SanityDataProvider } from "./context/SanityDataContext";
-import { Container } from "react-bootstrap";
 
 function App() {
-  const [theme, themeToggler, mountedComponent] = useDarkMode();
+  const [theme, mountedComponent] = useDarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
 
   const MUITHEME = createTheme({
@@ -26,7 +24,7 @@ function App() {
 
   const browser = (
     <BrowserRouter>
-      <Container className="bg-opacWhite rounded-md my-20">
+      <div className="bg-opacWhite rounded-xl my-20  mx-auto w-[90%] xl:w-[60%] px-4">
         <NavBar></NavBar>
         <Routes>
           <Route exact="true" path="/" element={<Home />}></Route>
@@ -35,7 +33,7 @@ function App() {
         <Route path="/post" element={<Post />}></Route>
         <Route path="/project" element={<Project />}></Route> */}
         </Routes>
-      </Container>
+      </div>
     </BrowserRouter>
   );
 
@@ -47,7 +45,7 @@ function App() {
         <ThemeProvider theme={themeMode}>
           <>
             <GlobalStyles />
-            <div className="wrapper animated animatedFadeInUp fadeInUp ">
+            {/* <div className="wrapper animated animatedFadeInUp fadeInUp ">
               <div className={"line " + themeMode.emailLineBg}></div>
               <div className="wordwrapper">
                 <div className="word">
@@ -57,10 +55,10 @@ function App() {
                   >
                     andressilva03@gmail.com
                   </a>
-                  {/* <Toggle theme={theme} toggleTheme={themeToggler} /> */}
+                 <Toggle theme={theme} toggleTheme={themeToggler} /> 
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {browser}
           </>

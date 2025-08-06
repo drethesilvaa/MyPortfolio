@@ -24,7 +24,7 @@ export const darkTheme = {
   text: "black",
   lightsaber: "yoda",
   mainTitleColor: "#14213d",
-  mainTextColor: "white",
+  mainTextColor: "#131417",
   mainLinkColor: "#D1FAE5",
   mainLinkHover: "rgb(21 255 134)",
   myInfoBarColor: "rgb(135,220,90)",

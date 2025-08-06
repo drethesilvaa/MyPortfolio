@@ -116,7 +116,7 @@ header{
   transition: transform 100ms ease-in-out 15ms;
 }
 .nav-link-animation:hover {
-  transform: translate3d(0px, -8px, 0px);
+  transform: translate3d(0px, -2px, 0px);
 }
 
   `;

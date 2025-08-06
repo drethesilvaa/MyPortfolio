@@ -1,20 +1,7 @@
-import React from "react";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
-import { SocialIcon } from "react-social-icons";
-import { RiMoonClearLine, RiSunLine } from "react-icons/ri";
-import { useTheme } from "styled-components";
 // import styled from "styled-components";
 
 export default function _Footer() {
-  const socialIconsStyle = { height: 35, width: 35 };
-
-  const theme = useTheme();
-
-  const themeName = theme.name;
-
-  function toggleonClick() {
-    document.getElementById("switchTheme").click();
-  }
 
   // const Footer = styled.footer`
   // background: ${({ theme }) => theme.footer_bg};
@@ -22,7 +9,7 @@ export default function _Footer() {
 
   return (
     <AnimatedOnScroll animationIn="fadeIn">
-      <footer className="pt-72 pb-4 text-center main-textColor">
+      <footer className="pt-10 pb-10 text-center main-textColor">
         {/* <div className="inline lg:hidden">
           <button
             className="dark_dayIcon"
@@ -38,7 +25,7 @@ export default function _Footer() {
         </div> */}
 
         <h4>Designed & Built by Andre Silva</h4>
-        <a
+        {/* <a
           className="block pb-3 lg:hidden "
           href="mailto:andressilva03@gmail.com"
         >
@@ -66,7 +53,7 @@ export default function _Footer() {
             fgColor="#fff"
             style={socialIconsStyle}
           ></SocialIcon>
-        </div>
+        </div> */}
       </footer>
     </AnimatedOnScroll>
   );

@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from "react";
-// import { NavLink } from "react-router-dom";
-import { SocialIcon } from "react-social-icons";
 import { HashLink as Link } from "react-router-hash-link";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar  } from "react-bootstrap";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
-import { useMediaQuery } from "react-responsive";
 import { useTheme } from "styled-components";
 import { Stylenavbar as NavStyle } from "../stylesheets/Stylenavbar";
 
 require("bootstrap");
-
-const scrollWithOffset = (el) => {
-  const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-  const yOffset = -150;
-  window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
-};
 
 export default function NavBar() {
   const [toggle, setToggler] = useState(false);
@@ -25,15 +16,8 @@ export default function NavBar() {
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "auto");
   }, [toggle]);
-
-  const stylenav =
-    "inline-flex items-center rounded main-titleColor tracking-wide text-xl nav-link-animation ";
-
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 991px)" });
-  const isBigScreen = useMediaQuery({ query: "(min-width: 992px)" });
   // const activeStyleNav = "text-red-1999 bg-red-700";
 
-  const socialIconsStyle = { height: 35, width: 35 };
 
   return (
     <header className="">
@@ -68,7 +52,7 @@ export default function NavBar() {
               to="/"
               exact="true"
               className={
-                "inline-flex items-center  main-titleColor text-xl cursive " +
+                "inline-flex items-center  main-titleColor text-lg font-medium " +
                 theme.classForNav
               }
             >
@@ -77,8 +61,8 @@ export default function NavBar() {
           </Navbar.Brand>
         </AnimatedOnScroll>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
+        {/* <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto text-center lg:text-left">
             {isTabletOrMobile && (
               <React.Fragment>
@@ -134,7 +118,7 @@ export default function NavBar() {
               </React.Fragment>
             )}
           </Nav>
-        </Navbar.Collapse>
+        </Navbar.Collapse> */}
       </Navbar>
     </header>
   );

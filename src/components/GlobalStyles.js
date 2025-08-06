@@ -113,7 +113,7 @@ header{
   
   .home-name{
     font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
+    font-weight: 500;
   
   }
 
@@ -199,9 +199,9 @@ header{
     top: 0;
     left:0;
     width: 100%;
-    opacity: 0.12;
+    opacity: 1;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
     overflow: hidden;
       background-size: cover;
       background-position: center;
@@ -234,9 +234,7 @@ header{
   }
   
   .project-image img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   .galleryOpen{

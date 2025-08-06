@@ -7,6 +7,7 @@
     "@amcharts/amcharts5": "^5.1.14",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@fontsource/montserrat": "^5.2.6",
     "@fontsource/poppins": "^5.2.6",
     "@fullpage/react-fullpage": "^0.1.23",
     "@mui/icons-material": "^5.10.14",
