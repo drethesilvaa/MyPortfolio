@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { HashLink as Link } from "react-router-hash-link";
-import { Navbar  } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import { AnimatedOnScroll } from "react-animated-css-onscroll";
 import { useTheme } from "styled-components";
 import { Stylenavbar as NavStyle } from "../stylesheets/Stylenavbar";
+import { motion } from "motion/react";
 
 require("bootstrap");
 
@@ -18,9 +19,13 @@ export default function NavBar() {
   }, [toggle]);
   // const activeStyleNav = "text-red-1999 bg-red-700";
 
-
   return (
-    <header className="">
+    <motion.header
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className=""
+    >
       <NavStyle></NavStyle>
       <Navbar
         bg="transparent"
@@ -120,6 +125,6 @@ export default function NavBar() {
           </Nav>
         </Navbar.Collapse> */}
       </Navbar>
-    </header>
+    </motion.header>
   );
 }

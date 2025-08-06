@@ -24,6 +24,10 @@ body {
   );
 }
 
-:not([class*="animated"]):not(.wrapper):not(.fadeInUp){
+:not([class*="animated"]):not(.wrapper):not(.fadeInUp) {
   transition: unset !important;
+}
+
+a:hover {
+  color: unset !important;
 }

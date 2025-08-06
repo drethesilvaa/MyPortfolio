@@ -17,10 +17,8 @@ export const StyleMyInfo = createGlobalStyle`
 .card {
   height: 435px;
   width: 100%;
-  background: #808080;
   // border-radius: 64% 36% 33% 67% / 44% 50% 50% 56%;
   overflow: hidden;
-  background: #000;
   box-shadow: 0 70px 63px -60px #000;
   display: flex;
   justify-content: center;
