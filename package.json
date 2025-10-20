@@ -9,6 +9,7 @@
     "@fontsource/poppins": "^5.2.6",
     "@mui/icons-material": "^5.10.14",
     "@mui/material": "^5.10.14",
+    "@phosphor-icons/react": "^2.1.10",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.3.0",
     "@sanity/image-url": "^1.0.1",

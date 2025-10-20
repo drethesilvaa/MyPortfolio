@@ -19,7 +19,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="lg:col-span-1 order-1 lg:order-2 flex items-center rounded-xl overflow-hidden h-full"
+            className="hidden lg:flex lg:col-span-1 order-1 lg:order-2 items-center rounded-xl overflow-hidden h-full"
           >
             <MyInfo
               userName={author?.name}
