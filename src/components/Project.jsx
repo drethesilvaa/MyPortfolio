@@ -5,6 +5,7 @@ import { useSanityData } from "../context/SanityDataContext.js";
 import ImageWithSkeleton from "./ui/images/ImageWithSkeleton.js";
 import { motion } from "motion/react";
 import { LinkIcon } from "@phosphor-icons/react/dist/ssr";
+import { getSanityImage } from "../utils/imageOptimization";
 
 export default function Project() {
   const { projects } = useSanityData();
@@ -50,7 +51,7 @@ export default function Project() {
                           rel="noopener noreferrer"
                         >
                           <ImageWithSkeleton
-                            src={project.projectImage}
+                            src={getSanityImage('landscape', project.projectImage)}
                             alt={project.title}
                             className="w-full h-full scale-105 group-hover:blur-[2px]"
                           />
@@ -100,7 +101,7 @@ export default function Project() {
                         </h3>
                       </div>
                       <ImageWithSkeleton
-                        src={project.projectImage}
+                        src={getSanityImage('landscape', project.projectImage)}
                         alt={project.title}
                         className="w-full h-full"
                       />

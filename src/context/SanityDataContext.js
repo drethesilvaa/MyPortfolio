@@ -11,7 +11,12 @@ const fetchAuthor = async () => {
     *[_type == "author"]{
       name,
       bio,
-      "authorImage": image.asset->url,
+      "authorImage": {
+        "asset": {
+          "id": image.asset._id,
+          "url": image.asset->url
+        }
+      },
        "Skills": *[_type=='skills']{ 
         skill,
         skill_Level
@@ -29,7 +34,12 @@ const fetchProjects = async () => {
       Language_Frameworks,
       date,
       projectType,
-      "projectImage": image.asset->url,
+      "projectImage": {
+        "asset": {
+          "id": image.asset._id,
+          "url": image.asset->url
+        }
+      },
       Links,
       gallery    
     }`);

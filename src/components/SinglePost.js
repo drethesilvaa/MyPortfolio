@@ -3,6 +3,7 @@ import sanityClient from "../client.js";
 import { useParams } from "react-router-dom";
 import imageUrlBuilder from "@sanity/image-url";
 import SanityBlockContent from "@sanity/block-content-to-react";
+import { getSanityImage } from "../utils/imageOptimization";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -29,7 +30,12 @@ export default function SinglePost() {
             },
             body,
             "name":author->name,
-            "authorImage":author->image
+            "authorImage":{
+              "asset":{
+                "id":author->image.asset._id,
+                "url":author->image.asset->url
+              }
+            }
         }`
       )
       .then((data) => setSinglePost(data[0]))
@@ -49,7 +55,7 @@ export default function SinglePost() {
               </h1>
               <div className="flex justify-center text-gray-800">
                 <img
-                  src={urlFor(singlePost.authorImage).url()}
+                  src={getSanityImage('thumb', singlePost.authorImage)}
                   alt={singlePost.name}
                   className="w-10 h10 rounded-full"
                 ></img>

@@ -5,6 +5,7 @@ import { useTheme } from "styled-components";
 import { Stylenavbar as NavStyle } from "../stylesheets/Stylenavbar";
 import { motion } from "motion/react";
 import { useSanityData } from "../context/SanityDataContext";
+import { getSanityImage } from "../utils/imageOptimization";
 
 require("bootstrap");
 
@@ -19,9 +20,6 @@ export default function NavBar() {
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "auto");
   }, [toggle]);
-
-  console.log(author?.authorImage);
-  // const activeStyleNav = "text-red-1999 bg-red-700";
 
   return (
     <motion.header
@@ -46,7 +44,7 @@ export default function NavBar() {
         >
           <div className="flex gap-2">
             <div className="w-10 h-10 overflow-hidden rounded-full shadow-md border-[2px] border-gray-50">
-              <img src={author?.authorImage} alt="Andre Profile" />
+              <img src={getSanityImage('square', author)} alt="Andre Profile" />
             </div>
             <p
               className={
