@@ -1,8 +1,8 @@
 // Image size presets for different aspect ratios
 export const imageSizes = {
   PRODUCT: {
-    square: { width: 400, height: 400 },
-    landscape: { width: 800, height: 600 },
+    square: { width: 1000, height: 1000 },
+    landscape: { width: 1200, height: 1000 },
     portrait: { width: 600, height: 800 },
     thumb: { width: 200, height: 200 },
     hero: { width: 1280, height: 720 },
