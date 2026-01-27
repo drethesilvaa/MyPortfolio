@@ -44,7 +44,7 @@ export default function NavBar() {
         >
           <div className="flex gap-2">
             <div className="w-10 h-10 overflow-hidden rounded-full shadow-md border-[2px] border-gray-50">
-              <img src={getSanityImage('square', author.authorImage)} alt="Andre Profile" />
+              <img src={getSanityImage('square', author?.authorImage)} alt="Andre Profile" />
             </div>
             <p
               className={
