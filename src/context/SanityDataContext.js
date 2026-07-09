@@ -29,6 +29,7 @@ const fetchAuthor = async () => {
 const fetchProjects = async () => {
     const data = await sanityClient.fetch(`
     *[_type == "project"] | order(date desc){
+      _id,
       title,
       description,
       Language_Frameworks,
@@ -41,7 +42,20 @@ const fetchProjects = async () => {
         }
       },
       Links,
-      gallery    
+      "sections": sections[]{
+        _key,
+        title,
+        description,
+        "images": images[]{
+          _key,
+          "asset": {
+            "id": asset._id,
+            "url": asset->url
+          },
+          alt,
+          cap
+        }
+      }
     }`);
     return data;
 };

@@ -53,56 +53,77 @@ export default {
       },
     },
     {
-      name: "gallery",
-      type: "object",
-      title: "Gallery",
-      fields: [
+      name: "sections",
+      title: "Showcase Sections",
+      type: "array",
+      description:
+        "Menu sections for the project detail dialog. Each section has a menu title and its own images.",
+      of: [
         {
-          name: "images",
-          type: "array",
-          title: "Images",
-          of: [
+          name: "section",
+          type: "object",
+          title: "Section",
+          fields: [
             {
-              name: "image",
-              type: "image",
-              title: "Image",
-              options: {
-                hotspot: true,
-              },
-              fields: [
+              name: "title",
+              type: "string",
+              title: "Menu Title",
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: "description",
+              type: "text",
+              title: "Description (optional)",
+            },
+            {
+              name: "images",
+              type: "array",
+              title: "Images",
+              of: [
                 {
-                  name: "alt",
-                  type: "string",
-                  title: "Alternative text",
-                },
-                {
-                  name: "cap",
-                  type: "string",
-                  title: "Caption",
+                  name: "image",
+                  type: "image",
+                  title: "Image",
+                  options: {
+                    hotspot: true,
+                  },
+                  fields: [
+                    {
+                      name: "alt",
+                      type: "string",
+                      title: "Alternative text",
+                    },
+                    {
+                      name: "cap",
+                      type: "string",
+                      title: "Caption",
+                    },
+                  ],
                 },
               ],
+              options: {
+                layout: "grid",
+              },
             },
           ],
-          options: {
-            layout: "grid",
+          preview: {
+            select: {
+              title: "title",
+              images: "images",
+              image: "images.0",
+            },
+            prepare(selection) {
+              const { title, images, image } = selection;
+
+              return {
+                title: title || "Untitled section",
+                subtitle: `${images ? Object.keys(images).length : 0} images`,
+                media: image,
+              };
+            },
           },
-        },      
+        },
       ],
-      preview: {
-        select: {
-          images: 'images',
-          image: 'images.0',
-        },
-        prepare(selection) {
-          const { images, image } = selection;
-    
-          return {
-            title: `Gallery block of ${Object.keys(images).length} images`,
-            subtitle: `${image.cap}`,
-            media: image,
-          };
-        },
-      },
     },
   ],
 };
